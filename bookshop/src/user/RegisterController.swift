@@ -17,7 +17,14 @@ class RegisterController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 圆角样式
         joinBtn.layer.cornerRadius = 5
+        // 背景图
+        let background = UIImageView(image: UIImage(named: "welcome"))
+        let w = self.view.frame.width
+        let h = self.view.frame.width * 29 / 41
+        background.frame = CGRect(x: 0, y: self.view.frame.height - h, width: w, height: h)
+        self.view.addSubview(background)
     }
     
     @IBAction func register(_ sender: Any) {
