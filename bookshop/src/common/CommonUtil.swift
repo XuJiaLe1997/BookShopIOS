@@ -56,6 +56,16 @@ class CommonUtil {
         return Response(isSuccess: true, msg: "注册成功");
     }
     
+    // 修改用户资料
+    static func modifyUserInfo(user: User) -> Response {
+        if(NSKeyedArchiver.archiveRootObject(userList, toFile: User.userSaveDir.path)){
+            return Response(isSuccess: true, msg: "修改资料成功")
+        } else {
+            return Response(isSuccess: false, msg: "修改资料失败")
+        }
+    }
+    
+    
     static func addUser(u: User!) {
         userList.append(u)
         NSKeyedArchiver.archiveRootObject(userList, toFile: User.userSaveDir.path)
@@ -168,6 +178,12 @@ class CommonUtil {
         } else {
             print("本地无数据，初始化admin账号")
             addUser(u: User(account: "admin", password: "admin"))
+        }
+        
+        // 开发状态下直接登录管理员
+        if(Config.isDev){
+            print("开发状态 - 免登录")
+            login(account: "admin", password: "admin")
         }
     }
     

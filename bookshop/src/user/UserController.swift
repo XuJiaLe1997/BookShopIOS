@@ -20,9 +20,13 @@ class UserController: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         headImage.layer.masksToBounds = true
         headImage.layer.cornerRadius = headImage.frame.width / 2
+        headImage.contentMode = .scaleToFill
         
-        // 注册监听器，监听loginSuccess通知
-        NotificationCenter.default.addObserver(self, selector: #selector(observerLoginSuccess), name: NSNotification.Name(rawValue:"loginSuccess"), object: nil)
+        // 注册监听器
+        NotificationCenter.default.addObserver(self, selector: #selector(observerLoginSuccess),
+                                               name: NSNotification.Name(rawValue:"loginSuccess"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(observerModifyInfo),
+                                               name: NSNotification.Name(rawValue:"modifyInfo"), object: nil)
         
         viewDidLoadHelper()
     }
@@ -32,13 +36,36 @@ class UserController: UITableViewController {
         if(CommonUtil.getUser() == nil) {
             print("用户未登录")
             nicknameTextView.text = "未登录"
-            headImage.image = UIImage(named: "img_4")
+            headImage.image = UIImage(named: "user_head_2")
         } else {
+            headImage.image = CommonUtil.getUser()?.getImg()
             nicknameTextView.text = CommonUtil.getUser()?.nickname
         }
     }
     
-    // 登录
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+        // 需要检查用户是否登录的section
+        if(indexPath.section == 1 || indexPath.section == 2){
+            if(CommonUtil.getUser() == nil) {
+                CBToast.showToastAction(message: "用户未登录")
+                return
+            }
+        } else {
+            return
+        }
+
+        // 根据点击的条目打开对应的页面
+        if(indexPath.section == 2) {
+            if(indexPath.row == 0) {    // 打开地址
+                
+            } else if (indexPath.row == 1){     // 打开个人资料
+                self.performSegue(withIdentifier: "userInfoSegue", sender: nil)
+            }
+        }
+    }
+    
+    // 点击头像区域跳转登录界面
     @IBAction func login(_ sender: UITapGestureRecognizer) {
         if(CommonUtil.getUser() == nil) {
             print("用户未登录，进入登录页面")
@@ -52,19 +79,17 @@ class UserController: UITableViewController {
         viewDidLoadHelper()
     }
     
-    // 退出登录
+    // 监听资料修改的通知，重新加载页面
+    @objc func observerModifyInfo() {
+        print("监听到ModifyInfo通知")
+        viewDidLoadHelper()
+    }
+    
+    // 退出登录，重新加载页面
     @IBAction func quitLogin(_ segue: UIStoryboardSegue){
         print("退出登录")
         CommonUtil.quitLogin()
         viewDidLoadHelper()
-    }
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-    
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return false
     }
     
     deinit {

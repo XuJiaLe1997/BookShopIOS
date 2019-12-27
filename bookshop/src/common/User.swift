@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class User: NSObject, NSCoding{
     
     var nickname: String?   // 昵称
     var account: String?    // 账号
     var password: String?   // 密码
+    var img: UIImage?       // 头像
     
     override init() {
         super.init()
@@ -28,6 +30,19 @@ class User: NSObject, NSCoding{
         self.nickname = nickname
     }
     
+    func setImg(img: UIImage) {
+        self.img = img
+    }
+    
+    // 获取头像
+    func getImg() -> UIImage {
+        if(img == nil) {
+            return UIImage(named: "user_head_2")!
+        } else {
+            return img!
+        }
+    }
+    
     // 数据保存到文件夹
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let userSaveDir = DocumentsDirectory.appendingPathComponent("user")
@@ -36,11 +51,13 @@ class User: NSObject, NSCoding{
         aCoder.encode(nickname,forKey: "nicknameKey" )
         aCoder.encode(account,forKey: "accountKey" )
         aCoder.encode(password, forKey: "passwordKey")
+        aCoder.encode(img, forKey: "imgKey")
     }
     
     required init?(coder aDecoder: NSCoder) {
         nickname = aDecoder.decodeObject(forKey: "nicknameKey") as? String
         account = aDecoder.decodeObject(forKey: "accountKey") as? String
         password = aDecoder.decodeObject(forKey: "passwordKey") as? String
+        img = aDecoder.decodeObject(forKey: "imgKey") as? UIImage
     }
 }
