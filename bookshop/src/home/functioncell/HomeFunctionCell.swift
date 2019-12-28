@@ -70,7 +70,7 @@ class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollection
         case 3:
             controller?.performSegue(withIdentifier: "searchSegue", sender: nil)
         default:
-            return
+            CBToast.showToastAction(message: "功能尚未开放")
         }
     }
     
