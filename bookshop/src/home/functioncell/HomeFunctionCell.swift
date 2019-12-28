@@ -13,6 +13,7 @@ class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollection
     
     let ScreenWidth  = UIScreen.main.bounds.width
     let numberOfFunction = 4
+    var controller: UIViewController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,7 +49,6 @@ class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         switch indexPath.row {
         case 0:
             return collectionView.dequeueReusableCell(
@@ -62,6 +62,15 @@ class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollection
         default:
             return collectionView.dequeueReusableCell(
                 withReuseIdentifier: "searchCollectionCell", for: indexPath) as! SearchCollectionCell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 3:
+            controller?.performSegue(withIdentifier: "searchSegue", sender: nil)
+        default:
+            return
         }
     }
     

@@ -38,6 +38,7 @@
 		A2C15C5023B72C380096D80D /* ActivityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */; };
 		A2C15C5223B72D710096D80D /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C5123B72D710096D80D /* CategoryCollectionCell.swift */; };
 		A2C15C5423B72EC30096D80D /* GoodCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C5323B72EC30096D80D /* GoodCollectionCell.swift */; };
+		A2C15C5623B733F00096D80D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C5523B733F00096D80D /* SearchController.swift */; };
 		A2EF593223B630B4007D677C /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF593123B630B4007D677C /* UserInfoController.swift */; };
 		A2EF593B23B633ED007D677C /* CBToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF593A23B633ED007D677C /* CBToast.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionCell.swift; sourceTree = "<group>"; };
 		A2C15C5123B72D710096D80D /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		A2C15C5323B72EC30096D80D /* GoodCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCollectionCell.swift; sourceTree = "<group>"; };
+		A2C15C5523B733F00096D80D /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		A2EF593123B630B4007D677C /* UserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
 		A2EF593A23B633ED007D677C /* CBToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 				A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */,
 				A2C15C5123B72D710096D80D /* CategoryCollectionCell.swift */,
 				A2C15C5323B72EC30096D80D /* GoodCollectionCell.swift */,
+				A2C15C5523B733F00096D80D /* SearchController.swift */,
 			);
 			path = functioncell;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				A25E9E9E23AC879500EEE779 /* MultilineLabel.swift in Sources */,
 				A20E7BA223A8BD8D0009F2C9 /* User.swift in Sources */,
 				A27B610123AB75BE00B73AAF /* HomeFunctionCell.swift in Sources */,
+				A2C15C5623B733F00096D80D /* SearchController.swift in Sources */,
 				A20E7BA423A8C04A0009F2C9 /* UserController.swift in Sources */,
 				A2C15C5223B72D710096D80D /* CategoryCollectionCell.swift in Sources */,
 				A248173C23AA1BE200CF3B9C /* LoginController.swift in Sources */,

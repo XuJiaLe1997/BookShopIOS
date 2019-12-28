@@ -41,6 +41,7 @@ class HomeController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.section == 0) {
             let functionCell = tableView.dequeueReusableCell(withIdentifier: "homeFunctionCell") as! HomeFunctionCell
+            functionCell.controller = self
             return functionCell
         } else if(indexPath.section == 1) {
             let newsCell = tableView.dequeueReusableCell(withIdentifier: "homeNewsCell") as! HomeNewsCell
