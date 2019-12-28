@@ -13,8 +13,9 @@ class CommonUtil {
     
     // 执行结果类
     class Response: NSObject {
-        var isSuccess: Bool = false;    // 执行结果
-        var msg: String?;               // 描述信息
+        var isSuccess: Bool = false     // 执行结果
+        var msg: String?                // 描述信息
+        var data: NSObject?             // 数据
         
         override init(){
             super.init();
@@ -23,6 +24,12 @@ class CommonUtil {
         init(isSuccess : Bool, msg: String){
             self.isSuccess = isSuccess;
             self.msg = msg;
+        }
+        
+        init(isSuccess: Bool, msg: String, data: NSObject) {
+            self.isSuccess = isSuccess
+            self.msg = msg
+            self.data = data
         }
     }
     
@@ -91,6 +98,10 @@ class CommonUtil {
     
     static func saveBookList() {
         NSKeyedArchiver.archiveRootObject(bookList, toFile: Book.bookSaveDir.path)
+    }
+    
+    static func search(bookName: String) -> Response {
+        return Response()
     }
     
     /* ======= end ======== */

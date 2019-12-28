@@ -13,6 +13,7 @@ import UIKit
 class HomeNewsCell: UITableViewCell, CycleScrollViewDelegate {
     
     var cycleView: CycleScrollView!
+    var isInit: Bool = false
     
     let imgSet: [UIImage] = [
         UIImage(named: "gundong1")!,
@@ -23,10 +24,13 @@ class HomeNewsCell: UITableViewCell, CycleScrollViewDelegate {
     ]
     
     func initCycleView(){
-        print("初始化图片轮播器")
-        cycleView = CycleScrollView(frame: CGRect.init(x: 0, y: 50, width: self.frame.width, height: 150), delegate: self)
-        cycleView.rollingEnable = true
-        self.addSubview(cycleView)
+        if(!isInit){    // 防止重复初始化
+            print("初始化图片轮播器")
+            cycleView = CycleScrollView(frame: CGRect.init(x: 0, y: 50, width: self.frame.width, height: 150), delegate: self)
+            cycleView.rollingEnable = true
+            self.addSubview(cycleView)
+            isInit = true
+        }
     }
     
     func cycleImageCount() -> Int {
