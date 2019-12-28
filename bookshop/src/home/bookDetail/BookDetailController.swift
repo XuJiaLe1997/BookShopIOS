@@ -69,6 +69,7 @@ class BookDetailController: UITableViewController {
         if(res.isSuccess) {
             addShoppingCarBtn.isEnabled = false
             addShoppingCarBtn.title = "已加入购物车"
+            self.tableView.reloadData()
         } else {
             let alert = UIAlertController(title: nil, message: res.msg, preferredStyle: UIAlertController.Style.alert)
             let btnOK = UIAlertAction(title: "确认", style: .default, handler: nil)
