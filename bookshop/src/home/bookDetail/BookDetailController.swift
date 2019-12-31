@@ -65,6 +65,14 @@ class BookDetailController: UITableViewController {
     }
     
     @IBAction func addShoppingCar(_ sender: Any) {
+        if(CommonUtil.getUser() == nil) {
+            let alert = UIAlertController(title: nil, message: "请先登录", preferredStyle: UIAlertController.Style.alert)
+            let btnOK = UIAlertAction(title: "确认", style: .default, handler: nil)
+            alert.addAction(btnOK)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let res = CommonUtil.addShoppingCar(book: book!) as CommonUtil.Response
         if(res.isSuccess) {
             addShoppingCarBtn.isEnabled = false
