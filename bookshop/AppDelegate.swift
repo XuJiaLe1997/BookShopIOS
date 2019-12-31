@@ -12,13 +12,29 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    // 屏幕旋转与禁止旋转
+    var isForceLandscape:Bool = false       // 横屏
+    var isForcePortrait:Bool = false        // 竖屏
+    var isForceAllDerictions:Bool = false   // 支持所有屏幕方向
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         CommonUtil.loadBooks()
         CommonUtil.loadUsers()
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if isForceAllDerictions {
+            return .all
+        } else if isForceLandscape {
+            return .landscape
+        } else if isForcePortrait {
+            return .portrait
+        }
+        // 默认是竖屏
+        return .portrait
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
