@@ -19,9 +19,9 @@ class ShoppingCarController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         
         let w = self.tableView.frame.width
-        self.img = UIImageView(frame: CGRect(x: w/2, y: 415, width: w/2, height: w/2))
-        self.img?.image = UIImage(named: "img_7")
-        self.tableView.addSubview(img!)
+        self.img = UIImageView(image: ImageUtil.resize(image: UIImage(named: "img_7")!, size: CGSize(width: w, height: w)) )
+        tableView.backgroundView = img
+        tableView.backgroundView?.contentMode = .bottomRight
         
         label = UILabel(frame: CGRect(x: w/4, y: w/4, width: w/2, height: 20))
         label?.text = "购物车还是空空如也～"
