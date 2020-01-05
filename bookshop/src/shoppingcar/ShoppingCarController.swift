@@ -68,6 +68,25 @@ class ShoppingCarController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        // 所有单元格都可删除
+        return UITableViewCell.EditingStyle.delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            let toRemove = CommonUtil.getShoppingCar()[indexPath.row]
+            CommonUtil.removeFromShoppingCar(book: toRemove)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            viewDidLoadHelper()
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
