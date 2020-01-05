@@ -28,6 +28,8 @@ class MultilineLabel: UILabel {
         self.textAlignment = NSTextAlignment.left // 左对齐
         self.font = UIFont.systemFont(ofSize: fontOfSize) // 字体大小
         self.sizeToFit()
+        
+        self.frame = CGRect(x: x, y: y, width: width, height: self.frame.height)
     }
     
     // 获取当前label的高度

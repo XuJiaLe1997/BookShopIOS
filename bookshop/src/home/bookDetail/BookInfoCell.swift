@@ -33,7 +33,6 @@ class BookInfoCell: UITableViewCell {
         self.addSubview(nameLabel)
         
         descLabel = MultilineLabel(x: 0, y: width + BookInfoCell.offset2, width: width, fontOfSize: 12, textStr: book.desc!, lineSpacing: 10)
-        descLabel.frame = CGRect(x: 0, y: width + BookInfoCell.offset2, width: width, height: descLabel.getHeight())
         self.addSubview(descLabel)
     }
     
