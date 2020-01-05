@@ -35,6 +35,10 @@
 		A27B610623ABC68A00B73AAF /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B610523ABC68A00B73AAF /* BookDetailController.swift */; };
 		A27B610823ABC6C200B73AAF /* BookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B610723ABC6C200B73AAF /* BookInfoCell.swift */; };
 		A28484CA23C0BA3900B7C3E1 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */; };
+		A28484CD23C0C47D00B7C3E1 /* CircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484CC23C0C47D00B7C3E1 /* CircleController.swift */; };
+		A28484CF23C0C4C600B7C3E1 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */; };
+		A28484D323C0E0BB00B7C3E1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484D223C0E0BB00B7C3E1 /* Video.swift */; };
+		A28484D523C0E4FB00B7C3E1 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */; };
 		A2C15C4C23B71BD80096D80D /* SearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */; };
 		A2C15C4E23B7282D0096D80D /* FunctionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4D23B7282D0096D80D /* FunctionCollectionCell.swift */; };
 		A2C15C5023B72C380096D80D /* ActivityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */; };
@@ -76,6 +80,10 @@
 		A27B610523ABC68A00B73AAF /* BookDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
 		A27B610723ABC6C200B73AAF /* BookInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
 		A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
+		A28484CC23C0C47D00B7C3E1 /* CircleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleController.swift; sourceTree = "<group>"; };
+		A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
+		A28484D223C0E0BB00B7C3E1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
 		A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionCell.swift; sourceTree = "<group>"; };
 		A2C15C4D23B7282D0096D80D /* FunctionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionCell.swift; sourceTree = "<group>"; };
 		A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionCell.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 		A20E7B9723A8B5980009F2C9 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A28484CB23C0C45900B7C3E1 /* circle */,
 				A20E7B9E23A8B6C30009F2C9 /* common */,
 				A20E7B9C23A8B6690009F2C9 /* shoppingcar */,
 				A20E7B9B23A8B6600009F2C9 /* user */,
@@ -180,6 +189,7 @@
 				A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */,
 				A20E7BA123A8BD8D0009F2C9 /* User.swift */,
 				A248173923A9F5FA00CF3B9C /* Book.swift */,
+				A28484D223C0E0BB00B7C3E1 /* Video.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -201,6 +211,15 @@
 				A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */,
 			);
 			path = bookDetail;
+			sourceTree = "<group>";
+		};
+		A28484CB23C0C45900B7C3E1 /* circle */ = {
+			isa = PBXGroup;
+			children = (
+				A28484CC23C0C47D00B7C3E1 /* CircleController.swift */,
+				A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */,
+			);
+			path = circle;
 			sourceTree = "<group>";
 		};
 		A2C15C4923B70E260096D80D /* functioncell */ = {
@@ -225,6 +244,7 @@
 				A2EF593A23B633ED007D677C /* CBToast.swift */,
 				A270737D23BBA31E00983D09 /* AlertUtil.swift */,
 				A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */,
+				A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -318,7 +338,10 @@
 				A2C15C5023B72C380096D80D /* ActivityCollectionCell.swift in Sources */,
 				A27B60FF23AB125600B73AAF /* CycleScrollView.swift in Sources */,
 				A2EF593B23B633ED007D677C /* CBToast.swift in Sources */,
+				A28484CD23C0C47D00B7C3E1 /* CircleController.swift in Sources */,
+				A28484CF23C0C4C600B7C3E1 /* CircleCell.swift in Sources */,
 				A248174423AA831D00CF3B9C /* HomeBookCell.swift in Sources */,
+				A28484D323C0E0BB00B7C3E1 /* Video.swift in Sources */,
 				A2C15C4C23B71BD80096D80D /* SearchCollectionCell.swift in Sources */,
 				A248174023AA826600CF3B9C /* HomeController.swift in Sources */,
 				A25E9EA423ACE14800EEE779 /* OrderController.swift in Sources */,
@@ -340,6 +363,7 @@
 				A20E7B8623A8B52A0009F2C9 /* AppDelegate.swift in Sources */,
 				A25E9EA023ACADE100EEE779 /* ShoppingCarController.swift in Sources */,
 				A25E9EA823AD155900EEE779 /* BookInfo2Cell.swift in Sources */,
+				A28484D523C0E4FB00B7C3E1 /* WaterFallLayout.swift in Sources */,
 				A20E7BA023A8B9950009F2C9 /* CommonUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

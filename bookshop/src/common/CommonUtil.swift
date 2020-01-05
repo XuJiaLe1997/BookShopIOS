@@ -106,6 +106,23 @@ class CommonUtil {
     
     /* ======= end ======== */
     
+    /* ======= 发现和视频接口 begin ====== */
+    
+    private static var videoList: [Video] = [Video]()
+    
+    static func getVideoList() -> [Video] {
+        videoList.append(Video(title: "山水风景，花鸟鱼虫，国风视频（我尽可能希望这个标题比较长，便于查看显示的效果）", url: "https://video-qn.ibaotu.com/00/55/65/30P888piCKJV.mp4", desc: "\t视频来源于网络，如有侵权请联系作者删除。这个版块是供用户分享生活视频，主要供书友们交流阅读经验、生活等。\n\t现实素材视频较少，因此从网络找了一些其他视频，可以自行替换。"))
+        videoList.append(Video(title: "古风武侠", url: "https://video-qn.ibaotu.com/18/22/83/094888piCSjF.mp4"))
+        videoList.append(Video(title: "漫威超级英雄集锦", url: "http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4", desc:
+            "漫威漫画公司（Marvel Comics）是美国漫画巨头，它创建于1939年，于1961年正式定名为Marvel，旧译为“惊奇漫画”，曾用名“时代漫画”（Timely Comics）、亚特拉斯漫画（Atlas Comics）。"))        
+        videoList.append(Video(title: "玩具总动员", url: "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4", desc: "《玩具总动员》是皮克斯的动画系列电影，截止2019年共制作了四部，由华特·迪士尼影片公司和皮克斯动画工作室合作推出。讲述了主角两个玩具牛仔警长胡迪和太空骑警巴斯光年的故事。"))
+       videoList.append(Video(title: "叶问", url: "http://vfx.mtime.cn/Video/2019/03/18/mp4/190318231014076505.mp4"))
+        
+        return videoList
+    }
+    
+    /* ======= end ======== */
+    
     /* ======= 购物车接口 begin ====== */
     
     private static var shoppingCar: [Book] = [Book]()
