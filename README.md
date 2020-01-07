@@ -12,21 +12,12 @@ Xcode版本：10.0 及以上
 
 #### II 演示
 
-- 登录、修改个人资料：
-
-![演示图片1](img/演示1.gif)
-
-- 浏览图书、搜索、添加购物车、结算：
-
-![演示图片2](img/演示2.gif)
-
-- 退出登录、注册新用户：
-
-![演示图片3](img/演示3.gif)
-
-- 瀑布流布局，点击后播放对应的视频：
-
-![演示图片4](img/演示4.gif)
+<p>
+    <img src="img/演示1.gif" alt="Sample"  width="150" height="300"/>
+    <img src="img/演示2.gif" alt="Sample"  width="150" height="300"/>
+    <img src="img/演示3.gif" alt="Sample"  width="150" height="300"/>
+    <img src="img/演示4.gif" alt="Sample"  width="150" height="300"/>
+</p>
 
 #### III 目录结构
 
