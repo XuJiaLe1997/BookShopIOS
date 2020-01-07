@@ -72,6 +72,22 @@ class CommonUtil {
         }
     }
     
+    // 新增地址
+    static func addAddress(address: Address) {
+        curUser?.addrList?.append(address)
+        NSKeyedArchiver.archiveRootObject(userList, toFile: User.userSaveDir.path)
+    }
+    
+    // 删除地址
+    static func deleteAddress(index: Int) {
+        curUser?.addrList?.remove(at: index)
+        NSKeyedArchiver.archiveRootObject(userList, toFile: User.userSaveDir.path)
+    }
+    
+    // 修改地址
+    static func modifyAddress() {
+        NSKeyedArchiver.archiveRootObject(userList, toFile: User.userSaveDir.path)
+    }
     
     static func addUser(u: User!) {
         userList.append(u)

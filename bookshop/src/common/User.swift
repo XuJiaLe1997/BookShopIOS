@@ -15,6 +15,7 @@ class User: NSObject, NSCoding{
     var account: String?    // 账号
     var password: String?   // 密码
     var img: UIImage?       // 头像
+    var addrList: [Address]?  // 地址列表
     
     override init() {
         super.init()
@@ -43,6 +44,13 @@ class User: NSObject, NSCoding{
         }
     }
     
+    func getAddrList() -> [Address] {
+        if(addrList == nil) {
+            addrList = [Address]()
+        }
+        return addrList!
+    }
+    
     // 数据保存到文件夹
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let userSaveDir = DocumentsDirectory.appendingPathComponent("user")
@@ -52,6 +60,7 @@ class User: NSObject, NSCoding{
         aCoder.encode(account,forKey: "accountKey" )
         aCoder.encode(password, forKey: "passwordKey")
         aCoder.encode(img, forKey: "imgKey")
+        aCoder.encode(addrList, forKey: "addrKey")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,5 +68,6 @@ class User: NSObject, NSCoding{
         account = aDecoder.decodeObject(forKey: "accountKey") as? String
         password = aDecoder.decodeObject(forKey: "passwordKey") as? String
         img = aDecoder.decodeObject(forKey: "imgKey") as? UIImage
+        addrList = aDecoder.decodeObject(forKey: "addrKey") as? [Address]
     }
 }

@@ -151,6 +151,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="WQu-hN-7mL" kind="show" id="539-Nt-zf0"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ICi-JW-qEj" style="IBUITableViewCellStyleDefault" id="TxU-dc-fSp">
                                         <rect key="frame" x="0.0" y="338" width="414" height="44"/>
@@ -220,6 +223,116 @@
             <point key="canvasLocation" x="1292.753623188406" y="-69.293478260869577"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="c0B-hQ-xMi">
+            <objects>
+                <navigationController id="WQu-hN-7mL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OBI-mK-cLh">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uT5-VR-FZe" kind="relationship" relationship="rootViewController" id="mCi-TE-ALv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsF-6A-P3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="748"/>
+        </scene>
+        <!--地址管理-->
+        <scene sceneID="NGG-gf-DLo">
+            <objects>
+                <viewController id="uT5-VR-FZe" customClass="AddressController" customModule="bookshop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EZN-Tq-0FG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kp4-Yj-AQV">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9c-ar-xGH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Bq-06-iLi">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="KzK-wH-HMF"/>
+                                                </constraints>
+                                            </mapView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yYe-8t-bm8">
+                                                <rect key="frame" x="0.0" y="380" width="414" height="420"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="addressCell" id="DCh-Mj-hcE" customClass="AddressCell" customModule="bookshop" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DCh-Mj-hcE" id="jXA-a9-5VC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmK-Is-O9Z">
+                                                <rect key="frame" x="259" y="327" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="+ 新建地址">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickAddBtn:" destination="uT5-VR-FZe" eventType="touchUpInside" id="Dtk-tL-8cE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="yYe-8t-bm8" firstAttribute="leading" secondItem="q9c-ar-xGH" secondAttribute="leading" id="3Od-xr-A1E"/>
+                                            <constraint firstItem="yYe-8t-bm8" firstAttribute="top" secondItem="6Bq-06-iLi" secondAttribute="bottom" constant="80" id="8AH-bP-I9A"/>
+                                            <constraint firstItem="6Bq-06-iLi" firstAttribute="top" secondItem="q9c-ar-xGH" secondAttribute="top" id="9XT-HE-rLY"/>
+                                            <constraint firstAttribute="bottom" secondItem="yYe-8t-bm8" secondAttribute="bottom" id="XmD-t6-g8g"/>
+                                            <constraint firstItem="6Bq-06-iLi" firstAttribute="leading" secondItem="q9c-ar-xGH" secondAttribute="leading" id="ah9-08-hqD"/>
+                                            <constraint firstAttribute="trailing" secondItem="yYe-8t-bm8" secondAttribute="trailing" id="sa2-Cf-kju"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Bq-06-iLi" secondAttribute="trailing" id="ucW-9J-m0k"/>
+                                            <constraint firstAttribute="height" constant="800" id="zlt-NL-SHz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="q9c-ar-xGH" secondAttribute="bottom" id="2v2-dA-2jA"/>
+                                    <constraint firstItem="q9c-ar-xGH" firstAttribute="top" secondItem="kp4-Yj-AQV" secondAttribute="top" id="GNv-22-9hJ"/>
+                                    <constraint firstItem="q9c-ar-xGH" firstAttribute="leading" secondItem="kp4-Yj-AQV" secondAttribute="leading" id="hTf-UC-xoA"/>
+                                    <constraint firstAttribute="trailing" secondItem="q9c-ar-xGH" secondAttribute="trailing" id="jXM-0M-c42"/>
+                                    <constraint firstItem="q9c-ar-xGH" firstAttribute="width" secondItem="kp4-Yj-AQV" secondAttribute="width" id="nhL-QI-qbW"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kp4-Yj-AQV" secondAttribute="bottom" id="9a9-NN-DeH"/>
+                            <constraint firstItem="kp4-Yj-AQV" firstAttribute="leading" secondItem="EZN-Tq-0FG" secondAttribute="leading" id="j6r-FB-quJ"/>
+                            <constraint firstItem="GQO-Vz-cZg" firstAttribute="trailing" secondItem="kp4-Yj-AQV" secondAttribute="trailing" id="raj-UH-kol"/>
+                            <constraint firstItem="kp4-Yj-AQV" firstAttribute="top" secondItem="GQO-Vz-cZg" secondAttribute="top" id="yJI-Re-mQB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GQO-Vz-cZg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="地址管理" id="2es-XG-IvM">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="uSt-Df-xTD">
+                            <connections>
+                                <action selector="back:" destination="uT5-VR-FZe" id="8j3-Yj-byM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addBtn" destination="YmK-Is-O9Z" id="aJB-gD-yus"/>
+                        <outlet property="mapView" destination="6Bq-06-iLi" id="k6f-nT-bff"/>
+                        <outlet property="tableView" destination="yYe-8t-bm8" id="FER-H8-VL2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9g-SJ-3Pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1618.840579710145" y="741.84782608695662"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="K8Y-N0-U2t">
             <objects>
                 <navigationController id="pam-7B-N7e" sceneMemberID="viewController">
@@ -233,7 +346,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02a-Io-Vsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="688"/>
+            <point key="canvasLocation" x="2417" y="748"/>
         </scene>
         <!--User Info Controller-->
         <scene sceneID="eza-Wi-kwe">
@@ -365,7 +478,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2711.594202898551" y="685.59782608695662"/>
+            <point key="canvasLocation" x="3346" y="748"/>
         </scene>
         <!--圈子-->
         <scene sceneID="8Kl-Oa-liy">
