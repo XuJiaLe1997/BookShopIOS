@@ -15,7 +15,10 @@ import UIKit
 
 class MultilineLabel: UILabel {
     
+    var lineSpacing: CGFloat
+    
     init(x: CGFloat, y: CGFloat, width: CGFloat, fontOfSize: CGFloat, textStr: String, lineSpacing: CGFloat ) {
+        self.lineSpacing = lineSpacing
         // 高度自适应
         super.init(frame: CGRect(x: x, y: y, width: width, height: CGFloat.greatestFiniteMagnitude))
         let text = NSMutableAttributedString.init(string: textStr)
@@ -30,6 +33,15 @@ class MultilineLabel: UILabel {
         self.sizeToFit()
         
         self.frame = CGRect(x: x, y: y, width: width, height: self.frame.height)
+    }
+    
+    func setText(textStr: String) {
+        let text = NSMutableAttributedString.init(string: textStr)
+        let style = NSMutableParagraphStyle.init()
+        style.lineSpacing = lineSpacing
+        text.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSMakeRange(0, text.length))
+        self.attributedText = text
+        self.sizeToFit()
     }
     
     // 获取当前label的高度
