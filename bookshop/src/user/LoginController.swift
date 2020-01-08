@@ -11,23 +11,61 @@ import UIKit
 
 class LoginController: UIViewController {
     
-    @IBOutlet weak var accountTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
-    
+    var accountTextField: EWTextField!
+    var passwordTextField: EWTextField!
+    var loginBtn: UIButton!
+    var phoneLoginBtn: UIButton!
+    var forgetBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginBtn.layer.cornerRadius = 5
-        imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = imageView.frame.width / 2
         
-        // 安全输入
-        passwordTextField.isSecureTextEntry = true
+        let scrollView: UIScrollView = UIScrollView(frame: self.view.frame)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(scrollView)
+        
+        let xOffset = CGFloat(25)
+        let yOffset = CGFloat(50)
+        
+        accountTextField = EWTextField(frame: CGRect(x: xOffset, y: yOffset,
+                                                     width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: false)
+        accountTextField.setTitle("账号", ofSize: 18)
+        accountTextField.clearButtonMode = .always
+        accountTextField.delegate = self
+        scrollView.addSubview(accountTextField)
+        
+        passwordTextField = EWTextField(frame: CGRect(x: xOffset, y: accountTextField.frame.maxY + 30,
+                                                      width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: true)
+        passwordTextField.setTitle("密码", ofSize: 18)
+        passwordTextField.delegate = self
+        scrollView.addSubview(passwordTextField)
+        
+        loginBtn = UIButton(frame: CGRect(x: 10, y: passwordTextField.frame.maxY + 50, width: self.view.frame.width - 20, height: 50))
+        loginBtn.backgroundColor = ColorUtil.blue
+        loginBtn.layer.cornerRadius = 25
+        loginBtn.setTitle("确认登录", for: .normal)
+        loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
+        scrollView.addSubview(loginBtn)
+        
+        phoneLoginBtn = UIButton(frame: CGRect(x: self.view.frame.width/2 - 100, y: loginBtn.frame.maxY + 5, width: 100, height: 50))
+        phoneLoginBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        phoneLoginBtn.setTitle("手机快捷登录", for: .normal)
+        phoneLoginBtn.setTitleColor(UIColor.darkGray, for: .normal)
+        scrollView.addSubview(phoneLoginBtn)
+        
+        let v = UIView(frame: CGRect(x: self.view.frame.width/2, y: loginBtn.frame.maxY + 20, width: 1, height: 20))
+        v.backgroundColor = UIColor.darkGray
+        scrollView.addSubview(v)
+        
+        forgetBtn = UIButton(frame: CGRect(x: self.view.frame.width/2, y: loginBtn.frame.maxY + 5, width: 80, height: 50))
+        forgetBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        forgetBtn.setTitle("忘记密码", for: .normal)
+        forgetBtn.setTitleColor(UIColor.darkGray, for: .normal)
+        scrollView.addSubview(forgetBtn)
+        
     }
     
-    @IBAction func login(_ sender: Any) {
+    @objc func login() {
         let var1: String? = accountTextField.text
         let var2: String? = passwordTextField.text
         var msg = "输入不完整"
@@ -56,4 +94,26 @@ class LoginController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension LoginController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        guard let textField = textField as? EWTextField else {
+            return true
+        }
+        if textField.text == ""{
+            textField.placeholderUp()
+        }
+        textField.changeLineHidden()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let textField = textField as? EWTextField else {
+            return
+        }
+        if textField.text == "" {
+            textField.placeholderDown()
+        }
+        textField.changeLineHidden()
+    }
 }

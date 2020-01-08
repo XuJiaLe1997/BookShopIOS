@@ -17,6 +17,8 @@
 		A20E7BA023A8B9950009F2C9 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */; };
 		A20E7BA223A8BD8D0009F2C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7BA123A8BD8D0009F2C9 /* User.swift */; };
 		A20E7BA423A8C04A0009F2C9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7BA323A8C04A0009F2C9 /* UserController.swift */; };
+		A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A233609723C5FAA100D68D46 /* ColorUtil.swift */; };
+		A233609A23C603EB00D68D46 /* EWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A233609923C603EB00D68D46 /* EWTextField.swift */; };
 		A248173223A9E8B900CF3B9C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173123A9E8B900CF3B9C /* SettingController.swift */; };
 		A248173423A9E98400CF3B9C /* CheckUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173323A9E98400CF3B9C /* CheckUpdateController.swift */; };
 		A248173823A9EF8300CF3B9C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173723A9EF8300CF3B9C /* Config.swift */; };
@@ -67,6 +69,8 @@
 		A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		A20E7BA123A8BD8D0009F2C9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A20E7BA323A8C04A0009F2C9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		A233609723C5FAA100D68D46 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		A233609923C603EB00D68D46 /* EWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWTextField.swift; sourceTree = "<group>"; };
 		A248173123A9E8B900CF3B9C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A248173323A9E98400CF3B9C /* CheckUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateController.swift; sourceTree = "<group>"; };
 		A248173723A9EF8300CF3B9C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 				A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */,
 				A20A1D4723C4A1840013A7CF /* LinearTextField.swift */,
 				A20A1D4923C4A4580013A7CF /* StringUtil.swift */,
+				A233609723C5FAA100D68D46 /* ColorUtil.swift */,
+				A233609923C603EB00D68D46 /* EWTextField.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -376,8 +382,10 @@
 				A27B610623ABC68A00B73AAF /* BookDetailController.swift in Sources */,
 				A25E9E9E23AC879500EEE779 /* MultilineLabel.swift in Sources */,
 				A20E7BA223A8BD8D0009F2C9 /* User.swift in Sources */,
+				A233609A23C603EB00D68D46 /* EWTextField.swift in Sources */,
 				A27B610123AB75BE00B73AAF /* HomeFunctionCell.swift in Sources */,
 				A2C15C5623B733F00096D80D /* SearchController.swift in Sources */,
+				A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */,
 				A2766C4323C367900037E1BF /* AddressCell.swift in Sources */,
 				A20E7BA423A8C04A0009F2C9 /* UserController.swift in Sources */,
 				A2C15C5223B72D710096D80D /* CategoryCollectionCell.swift in Sources */,
