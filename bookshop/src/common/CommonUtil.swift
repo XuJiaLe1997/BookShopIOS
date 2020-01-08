@@ -225,7 +225,7 @@ class CommonUtil {
         }
         
         // 开发状态下直接登录管理员
-        if(Config.isDev){
+        if(Config.autoLogin){
             print("开发状态 - 免登录")
             login(account: "admin", password: "admin")
         }

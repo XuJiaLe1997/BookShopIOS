@@ -20,6 +20,6 @@ class Config{
     static let authorEmail = "1226501329@qq.com"
     static let authorOrganize = "华南理工大学(Scut)"
     
-    // 是否处于开发模式，此状态下免登录
-    static let isDev = true
+    // 是否自动登录
+    static let autoLogin = false
 }

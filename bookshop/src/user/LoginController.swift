@@ -22,6 +22,9 @@ class LoginController: UIViewController {
         loginBtn.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = imageView.frame.width / 2
+        
+        // 安全输入
+        passwordTextField.isSecureTextEntry = true
     }
     
     @IBAction func login(_ sender: Any) {
