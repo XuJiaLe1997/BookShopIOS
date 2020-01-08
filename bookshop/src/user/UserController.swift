@@ -58,7 +58,7 @@ class UserController: UITableViewController {
         // 根据点击的条目打开对应的页面
         if(indexPath.section == 2) {
             if(indexPath.row == 0) {    // 打开地址
-                
+                self.performSegue(withIdentifier: "showAddressSegue", sender: nil)
             } else if (indexPath.row == 1){     // 打开个人资料
                 self.performSegue(withIdentifier: "userInfoSegue", sender: nil)
             }

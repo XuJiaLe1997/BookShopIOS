@@ -151,9 +151,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="WQu-hN-7mL" kind="show" id="539-Nt-zf0"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ICi-JW-qEj" style="IBUITableViewCellStyleDefault" id="TxU-dc-fSp">
                                         <rect key="frame" x="0.0" y="338" width="414" height="44"/>
@@ -211,6 +208,7 @@
                         <outlet property="nicknameTextView" destination="6RX-VE-tcz" id="pDI-xa-zrg"/>
                         <segue destination="OlO-XL-tJ9" kind="show" identifier="loginSegue" id="8UF-fZ-X5u"/>
                         <segue destination="pam-7B-N7e" kind="show" identifier="userInfoSegue" id="ahE-e2-kWz"/>
+                        <segue destination="WQu-hN-7mL" kind="show" identifier="showAddressSegue" id="MjS-ke-uIF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdh-KA-vSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
