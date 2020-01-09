@@ -32,7 +32,7 @@ class EWTextField: UITextField {
         label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = ColorUtil.use255Color(red: 51, green: 51, blue: 51, alpha: 0.4)
         label.textAlignment = .left
-        label.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        label.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
         return label
     }()
     
