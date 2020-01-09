@@ -36,10 +36,24 @@ class EWTextField: UITextField {
         return label
     }()
     
-    init(frame:CGRect,isSecure:Bool) {
+    // 所有输入框默认使用此代理实现，便于监听文本状况
+    private static let defaultDelegate: UITextFieldDelegateImpl = UITextFieldDelegateImpl()
+    
+    init(frame:CGRect, isSecure:Bool) {
         super.init(frame:frame)
+        self.delegate = EWTextField.defaultDelegate
+        self.addSubview(phLabel)
+        self.layer.addSublayer(bottomLine)
+        // 安全输入框
         self.isSecureTextEntry = isSecure
-        drawMyView()
+        if isSecure {
+            let passwordSwitch = UIButton(frame: CGRect(x: 0, y: 0, width: 21, height: 12.5))
+            passwordSwitch.setImage(UIImage(named:"close_eye"), for: .normal)
+            passwordSwitch.setImage(UIImage(named:"open_eye"), for: .selected)
+            passwordSwitch.addTarget(self, action: #selector(togglePasswordHidden(sender:)), for: .touchUpInside)
+            self.rightView = passwordSwitch
+            self.rightViewMode = .always
+        }
         /// 添加字数判断
         //        addChangeTextTarget()
     }
@@ -47,23 +61,12 @@ class EWTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func drawMyView() {
-        self.addSubview(phLabel)
-        self.layer.addSublayer(bottomLine)
-        if self.isSecureTextEntry {
-            let passwordSwitch = PassowrdSwitch(frame: CGRect(x: 0, y: 0, width: 21, height: 12.5))
-            passwordSwitch.addTarget(self, action: #selector(togglePasswordHidden(sender:)), for: .touchUpInside)
-            self.rightView = passwordSwitch
-            self.rightViewMode = .always
-        }
-    }
-    
     func setTitle(_ title: String!, ofSize: CGFloat) {
         phLabel.text = title
         phLabel.font = UIFont.systemFont(ofSize: ofSize)
     }
     
-    @objc func togglePasswordHidden(sender:PassowrdSwitch) {
+    @objc func togglePasswordHidden(sender: UIButton) {
         self.isSecureTextEntry = !self.isSecureTextEntry
         sender.isSelected = !sender.isSelected
     }
@@ -95,28 +98,36 @@ class EWTextField: UITextField {
     }
     
     /// 重写方法调整rightView.frame来实现密码状态下的眼睛按钮与非密码状态下的清空按钮对齐
-    ///
-    /// - Parameter bounds: textField.frame
-    /// - Returns: rightView.frame
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         var rect = super.rightViewRect(forBounds: bounds)
         rect.origin.x -= 4
         return rect
     }
 }
-/// 密码形式的右侧明密文转换按钮
-class PassowrdSwitch : UIButton {
+
+// 监听输入框输入状态
+class  UITextFieldDelegateImpl: UIViewController, UITextFieldDelegate {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        config()
+    // 开始输入时，若文本框为空，placeholder自动上浮
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        guard let textField = textField as? EWTextField else {
+            return true
+        }
+        if textField.text == ""{
+            textField.placeholderUp()
+        }
+        textField.changeLineHidden()
+        return true
     }
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        config()
-    }
-    func config() {
-        self.setImage(UIImage(named:"close_eye"), for: .normal)
-        self.setImage(UIImage(named:"open_eye"), for: .selected)
+    
+    // 结束输入时，若文本框为空，placeholder下降
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let textField = textField as? EWTextField else {
+            return
+        }
+        if textField.text == "" {
+            textField.placeholderDown()
+        }
+        textField.changeLineHidden()
     }
 }

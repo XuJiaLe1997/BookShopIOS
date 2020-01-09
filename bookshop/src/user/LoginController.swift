@@ -31,13 +31,11 @@ class LoginController: UIViewController {
                                                      width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: false)
         accountTextField.setTitle("账号", ofSize: 18)
         accountTextField.clearButtonMode = .always
-        accountTextField.delegate = self
         scrollView.addSubview(accountTextField)
         
         passwordTextField = EWTextField(frame: CGRect(x: xOffset, y: accountTextField.frame.maxY + 30,
                                                       width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: true)
         passwordTextField.setTitle("密码", ofSize: 18)
-        passwordTextField.delegate = self
         scrollView.addSubview(passwordTextField)
         
         loginBtn = UIButton(frame: CGRect(x: 10, y: passwordTextField.frame.maxY + 50, width: self.view.frame.width - 20, height: 50))
@@ -94,26 +92,4 @@ class LoginController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-}
-
-extension LoginController: UITextFieldDelegate {
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        guard let textField = textField as? EWTextField else {
-            return true
-        }
-        if textField.text == ""{
-            textField.placeholderUp()
-        }
-        textField.changeLineHidden()
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let textField = textField as? EWTextField else {
-            return
-        }
-        if textField.text == "" {
-            textField.placeholderDown()
-        }
-        textField.changeLineHidden()
-    }
 }
