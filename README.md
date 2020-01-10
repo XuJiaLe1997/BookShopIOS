@@ -18,6 +18,7 @@ Xcode版本：10.0 及以上
     <img src="img/演示3.gif" alt="Sample"  width="200" height="400"/>
     <img src="img/演示4.gif" alt="Sample"  width="200" height="400"/>
     <img src="img/演示5.gif" alt="Sample"  width="200" height="400"/>
+    <img src="img/演示6.gif" alt="Sample"  width="200" height="400"/>
 </p>
 
 #### III 目录结构
