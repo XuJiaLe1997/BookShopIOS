@@ -14,6 +14,8 @@
     <string>启用定位功能</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>启用定位功能</string>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

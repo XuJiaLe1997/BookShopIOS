@@ -28,6 +28,9 @@ class UserController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(observerModifyInfo),
                                                name: NSNotification.Name(rawValue:"modifyInfo"), object: nil)
         
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+                
         viewDidLoadHelper()
     }
     
@@ -36,7 +39,7 @@ class UserController: UITableViewController {
         if(CommonUtil.getUser() == nil) {
             print("用户未登录")
             nicknameTextView.text = "未登录"
-            headImage.image = UIImage(named: "user_head_2")
+            headImage.image = UIImage(named: "user_head_3")
         } else {
             headImage.image = CommonUtil.getUser()?.getImg()
             nicknameTextView.text = CommonUtil.getUser()?.nickname

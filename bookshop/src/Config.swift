@@ -20,6 +20,6 @@ class Config{
     static let authorEmail = "1226501329@qq.com"
     static let authorOrganize = "华南理工大学(Scut)"
     
-    // 是否自动登录
-    static let autoLogin = false
+    // 是否免登录，自动登录管理员账号admin
+    static let autoLogin = true
 }

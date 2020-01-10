@@ -13,10 +13,10 @@ class SettingController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView()
-    }
-    
-    @IBAction func backToSetting(_ segue: UIStoryboardSegue){
         
+        tableView.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
+        tableView.theme_separatorColor = ThemeColorPicker(keyPath:"ListViewController.separatorColor")
+        
+        tableView.tableFooterView = UIView()
     }
 }

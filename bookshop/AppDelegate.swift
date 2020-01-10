@@ -22,7 +22,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         CommonUtil.loadBooks()
         CommonUtil.loadUsers()
+        initTheme()
         return true
+    }
+    
+    fileprivate func initTheme() {
+        
+        ThemeManager.setTheme(plistName: "Red", path: .mainBundle)
+        
+        // 顶部状态栏
+        UIApplication.shared.theme_setStatusBarStyle("UIStatusBarStyle", animated: true)
+        
+        // 导航栏样式
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.theme_tintColor = "Global.barTextColor"
+        navigationBar.theme_barTintColor = "Global.barTintColor"
+        navigationBar.isTranslucent = false // 不使用模糊
+        navigationBar.theme_titleTextAttributes = ThemeStringAttributesPicker(keyPath: "Global.barTextColor") { value -> [NSAttributedString.Key : AnyObject]? in
+            guard let rgba = value as? String else {
+                return nil
+            }
+            
+            let color = UIColor(rgba: rgba)
+            let shadow = NSShadow(); shadow.shadowOffset = CGSize.zero
+            let titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                NSAttributedString.Key.shadow: shadow
+            ]
+            
+            return titleTextAttributes
+        }
+        
+        // toolbar样式，本例有部分页面使用toolbar
+        let toolBar = UIToolbar.appearance()
+//        toolBar.theme_tintColor = "Global.barTextColor"
+//        toolBar.theme_barTintColor = "Global.barTintColor"
+        toolBar.isTranslucent = false
+        
+        // tabbar样式
+        let tabBar = UITabBar.appearance()
+        tabBar.theme_tintColor = "Global.tabTextColor"
+        tabBar.theme_barTintColor = "Global.tabTintColor"
+        tabBar.isTranslucent = false
+        
+        // tabBarItem样式，若使用故事板推荐25*25的icon
+        let tabBarItem = UITabBarItem.appearance()
+        tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)], for: .normal)
+        tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 5)
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {

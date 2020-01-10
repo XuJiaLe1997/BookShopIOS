@@ -14,6 +14,7 @@ class OrderController: UITableViewController {
     @IBOutlet weak var numberLabel: UILabel!
     
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var btn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,13 @@ class OrderController: UITableViewController {
             amount += b.price!
         }
         amountLabel.text = amount.description
+        
+        btn.layer.cornerRadius = btn.frame.height/2
     }
-    
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+        
+//    @IBAction func back(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
     
     @IBAction func pay(_ sender: Any) {
@@ -49,7 +51,7 @@ class OrderController: UITableViewController {
         print("确认支付")
         CommonUtil.buy()
         NotificationCenter.default.post(name: NSNotification.Name("refreshShoppingCar"), object: nil)
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

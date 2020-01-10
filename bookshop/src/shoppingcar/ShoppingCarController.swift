@@ -13,6 +13,7 @@ class ShoppingCarController: UITableViewController {
     
     var img: UIImageView?
     var label: UILabel?
+    @IBOutlet weak var btn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +41,11 @@ class ShoppingCarController: UITableViewController {
         if(CommonUtil.getShoppingCar().count == 0){
             img?.isHidden = false
             label?.isHidden = false
+            btn.isEnabled = false
         } else {
             img?.isHidden = true
             label?.isHidden = true
+            btn.isEnabled = true
         }
     }
     

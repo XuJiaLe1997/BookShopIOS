@@ -30,9 +30,6 @@ class SearchController: UITableViewController, UISearchResultsUpdating{
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar      // 添加searchbar到tableview
         
-        // 导航栏样式
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     // 搜索结果回显
