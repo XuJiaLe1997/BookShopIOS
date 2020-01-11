@@ -27,9 +27,12 @@ class WaterFallLayout: UICollectionViewFlowLayout {
     var delegate: WaterFallDelegate!
     // 添加一个数组属性，用来存放每个item的布局信息
     var attributes:Array<UICollectionViewLayoutAttributes>?
+    // 布局的垂直偏移量，便于在顶部添加其他view
+    var yOffset: CGFloat!
 
-    init(delegate: WaterFallDelegate) {
+    init(delegate: WaterFallDelegate, yOffset: CGFloat = 0) {
         self.delegate = delegate
+        self.yOffset = yOffset
         super.init()
     }
     
@@ -66,19 +69,19 @@ class WaterFallLayout: UICollectionViewFlowLayout {
             // 设置item的起始坐标
             let x = spacing + (spacing + width) * CGFloat(column)
             let y = column == 0 ? columnHeight.one-height : columnHeight.two-height
-            attris.frame = CGRect(x: CGFloat(x) , y: CGFloat(y), width: width, height: CGFloat(height))
+            attris.frame = CGRect(x: CGFloat(x) , y: CGFloat(y) + self.yOffset, width: width, height: CGFloat(height))
             
             attributes?.append(attris)
         }
         
         //以最大一列的高度计算每个item高度的平均值，滑动content需要item的size来确定
-        var var1: CGFloat = 0.0, var2: Int = 0
+        var var1: CGFloat = self.yOffset, var2: Int = 0
         if(columnHeight.one > columnHeight.two) {
-            var1 = columnHeight.one
-            var2 = itemInColumn.one
+            var1 += columnHeight.one
+            var2 += itemInColumn.one
         } else {
-            var1 = columnHeight.two
-            var2 = itemInColumn.two
+            var1 += columnHeight.two
+            var2 += itemInColumn.two
         }
         self.itemSize = CGSize(width: width, height: var1/CGFloat(var2)-spacing)
     }

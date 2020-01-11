@@ -16,15 +16,21 @@ class CircleController: UICollectionViewController, WaterFallDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let playbill = UIImageView(image: UIImage(named: "video_playbill"))
+        playbill.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.width*2/3)
+        
         //创建瀑布流视图布局类
-        layout = WaterFallLayout(delegate: self)
+        layout = WaterFallLayout(delegate: self, yOffset: collectionView.frame.width*2/3)
         layout.minimumInteritemSpacing = 5
         //创建集合视图
         collectionView.collectionViewLayout = layout
         //注册载体数据类
-        collectionView.register(CircleCell.classForCoder(), forCellWithReuseIdentifier: "foundCell")
+        collectionView.register(CircleCell.classForCoder(), forCellWithReuseIdentifier: "videoCell")
         
         collectionView.backgroundColor = ColorUtil.use255Color(red: 250, green: 250, blue: 250, alpha: 1)
+        
+        collectionView.addSubview(playbill)
     }
     
     func getCount() -> Int {
@@ -60,7 +66,7 @@ class CircleController: UICollectionViewController, WaterFallDelegate {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "foundCell", for: indexPath) as!  CircleCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as!  CircleCell
         cell.video = videoUrl[indexPath.row]
         cell.initCell()
         return cell
