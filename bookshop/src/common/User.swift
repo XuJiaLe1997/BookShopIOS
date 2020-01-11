@@ -70,4 +70,8 @@ class User: NSObject, NSCoding{
         img = aDecoder.decodeObject(forKey: "imgKey") as? UIImage
         addrList = aDecoder.decodeObject(forKey: "addrKey") as? [Address]
     }
+    
+    func toNSData() -> NSData{
+        return NSKeyedArchiver.archivedData(withRootObject: self) as! NSData
+    }
 }

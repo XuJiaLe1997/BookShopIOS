@@ -43,6 +43,7 @@ class CommonUtil {
             if(u.account == account){
                 if(u.password == password){
                     curUser = u
+                    UserDefaults.LoginInfo.set(value: u.toNSData(), forKey: .user)
                     return Response(isSuccess: true, msg: "登录成功")
                 } else {
                     return Response(isSuccess: false, msg: "密码错误")
@@ -100,6 +101,7 @@ class CommonUtil {
     
     static func quitLogin() {
         curUser = nil
+        UserDefaults.LoginInfo.set(value: nil, forKey: .user)
     }
     
     /* ======= end ======== */
@@ -228,6 +230,18 @@ class CommonUtil {
         if(Config.autoLogin){
             print("开发状态 - 免登录")
             login(account: "admin", password: "admin")
+        } else {
+            // 上一次登录的用户
+            let uData = UserDefaults.LoginInfo.object(forKey: .user) as? Data
+            if(uData != nil) {
+                let u = NSKeyedUnarchiver.unarchiveObject(with: uData!) as? User
+                if(u != nil) {
+                    print("检测上次登录成功")
+                    curUser = u
+                }
+            }
+            
+            
         }
     }
     

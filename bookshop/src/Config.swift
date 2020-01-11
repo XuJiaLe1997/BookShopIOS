@@ -21,5 +21,5 @@ class Config{
     static let authorOrganize = "华南理工大学(Scut)"
     
     // 是否免登录，自动登录管理员账号admin
-    static let autoLogin = true
+    static let autoLogin = false
 }

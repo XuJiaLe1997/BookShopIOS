@@ -21,8 +21,12 @@ enum MyThemes: Int {
         current = theme
         
         switch theme {
-        case .red   : ThemeManager.setTheme(plistName: "Red", path: .mainBundle)
-        case .night : ThemeManager.setTheme(plistName: "Night", path: .mainBundle)
+        case .red   :
+            UserDefaults.AppInfo.set(value: "Red", forKey: .themeStyle)
+            ThemeManager.setTheme(plistName: "Red", path: .mainBundle)
+        case .night :
+            UserDefaults.AppInfo.set(value: "Night", forKey: .themeStyle)
+            ThemeManager.setTheme(plistName: "Night", path: .mainBundle)
         }
     }
     
