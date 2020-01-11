@@ -15,8 +15,10 @@ class CircleCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-        self.layer.cornerRadius = 10
+        backgroundColor = .white
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 0.3
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func initCell(){
@@ -49,24 +51,24 @@ class CircleCell: UICollectionViewCell {
         
         // 封面
         let coverImg = UIImageView(image: video.getCover())
-        coverImg.frame = CGRect(x: 5, y: dateLabel.frame.maxY + 10, width: self.frame.width - 10, height: self.frame.width - 10)
+        coverImg.frame = CGRect(x: 0, y: dateLabel.frame.maxY + 10, width: self.frame.width, height: self.frame.width*3/5)
         self.addSubview(coverImg)
         
         // 标题
-        let title = MultilineLabel(x: 5, y: coverImg.frame.maxY + 10, width: self.frame.width - 10, fontOfSize: 18, textStr: video.title!, lineSpacing: 5)
+        let title = MultilineLabel(x: 5, y: coverImg.frame.maxY + 10, width: self.frame.width - 10, fontOfSize: 14, textStr: video.title!, lineSpacing: 5)
         self.addSubview(title)
         
         // 摘要
-        let desc = MultilineLabel(x: 5, y: title.frame.maxY + 10, width: self.frame.width - 10, fontOfSize: 12, textStr: video.desc!, lineSpacing: 5)
-        desc.textColor = UIColor.darkGray
-        self.addSubview(desc)
+//        let desc = MultilineLabel(x: 5, y: title.frame.maxY + 10, width: self.frame.width - 10, fontOfSize: 12, textStr: video.desc!, lineSpacing: 5)
+//        desc.textColor = UIColor.darkGray
+//        self.addSubview(desc)
         
         // 点赞
         let icon1 = UIImageView(image: UIImage(named: "dianzan"))
-        icon1.frame = CGRect(x: 10, y: desc.frame.maxY + 13, width: 15, height: 13)
+        icon1.frame = CGRect(x: 10, y: title.frame.maxY + 13, width: 15, height: 13)
         self.addSubview(icon1)
         
-        let label1 = UILabel(frame: CGRect(x: 30, y: desc.frame.maxY + 13 , width: 25, height: 13))
+        let label1 = UILabel(frame: CGRect(x: 30, y: title.frame.maxY + 13 , width: 25, height: 13))
         if(video.num1 >= 99) {
             label1.text = "99+"
         } else {
@@ -78,10 +80,10 @@ class CircleCell: UICollectionViewCell {
         
         // 评论
         let icon2 = UIImageView(image: UIImage(named: "pinglun"))
-        icon2.frame = CGRect(x: 60, y: desc.frame.maxY + 10, width: 15, height: 18)
+        icon2.frame = CGRect(x: 60, y: title.frame.maxY + 10, width: 15, height: 18)
         self.addSubview(icon2)
         
-        let label2 = UILabel(frame: CGRect(x: 80, y: desc.frame.maxY + 13 , width: 25, height: 13))
+        let label2 = UILabel(frame: CGRect(x: 80, y: title.frame.maxY + 13 , width: 25, height: 13))
         if(video.num2 >= 99) {
             label2.text = "99+"
         } else {

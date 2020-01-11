@@ -36,7 +36,7 @@ class Video {
     }
     
     func getCover() -> UIImage {
-        return (cover != nil) ? cover! : UIImage(named: "load_img_fail")!;
+        return (cover != nil) ? cover! : UIImage(named: "video")!;
     }
     
     func getOwner() -> User {

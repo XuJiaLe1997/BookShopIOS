@@ -46,6 +46,7 @@
 		A28484CF23C0C4C600B7C3E1 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */; };
 		A28484D323C0E0BB00B7C3E1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484D223C0E0BB00B7C3E1 /* Video.swift */; };
 		A28484D523C0E4FB00B7C3E1 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */; };
+		A2A4631F23C9F37F00911C36 /* PlaybillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4631E23C9F37F00911C36 /* PlaybillCell.swift */; };
 		A2C15C4C23B71BD80096D80D /* SearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */; };
 		A2C15C4E23B7282D0096D80D /* FunctionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4D23B7282D0096D80D /* FunctionCollectionCell.swift */; };
 		A2C15C5023B72C380096D80D /* ActivityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */; };
@@ -134,6 +135,7 @@
 		A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
 		A28484D223C0E0BB00B7C3E1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
+		A2A4631E23C9F37F00911C36 /* PlaybillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybillCell.swift; sourceTree = "<group>"; };
 		A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionCell.swift; sourceTree = "<group>"; };
 		A2C15C4D23B7282D0096D80D /* FunctionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionCell.swift; sourceTree = "<group>"; };
 		A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionCell.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				A28484CC23C0C47D00B7C3E1 /* CircleController.swift */,
 				A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */,
+				A2A4631E23C9F37F00911C36 /* PlaybillCell.swift */,
 			);
 			path = circle;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				A2C15C5623B733F00096D80D /* SearchController.swift in Sources */,
 				A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */,
 				A2766C4323C367900037E1BF /* AddressCell.swift in Sources */,
+				A2A4631F23C9F37F00911C36 /* PlaybillCell.swift in Sources */,
 				A2EAB92C23C829D2001899A5 /* ThemeManager.swift in Sources */,
 				A2EAB92323C829D2001899A5 /* ThemeColorPicker.swift in Sources */,
 				A20E7BA423A8C04A0009F2C9 /* UserController.swift in Sources */,

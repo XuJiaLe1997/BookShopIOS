@@ -18,10 +18,13 @@ class CircleController: UICollectionViewController, WaterFallDelegate {
         super.viewDidLoad()
         //创建瀑布流视图布局类
         layout = WaterFallLayout(delegate: self)
+        layout.minimumInteritemSpacing = 5
         //创建集合视图
         collectionView.collectionViewLayout = layout
         //注册载体数据类
         collectionView.register(CircleCell.classForCoder(), forCellWithReuseIdentifier: "foundCell")
+        
+        collectionView.backgroundColor = ColorUtil.use255Color(red: 250, green: 250, blue: 250, alpha: 1)
     }
     
     func getCount() -> Int {
@@ -36,11 +39,11 @@ class CircleController: UICollectionViewController, WaterFallDelegate {
         // 时间高度
         h += 20
         // 封面高度
-        h += self.layout.getItemWidth()
+        h += self.layout.getItemWidth()*3/5
         // 标题高度
-        h += MultilineLabel.caculateHeight(width: self.layout.getItemWidth() - 10, fontOfSize: 18, textStr: videoUrl[index].title!, lineSpacing: 5)
+        h += MultilineLabel.caculateHeight(width: self.layout.getItemWidth() - 10, fontOfSize: 14, textStr: videoUrl[index].title!, lineSpacing: 5)
         // 摘要高度
-        h += MultilineLabel.caculateHeight(width: self.layout.getItemWidth() - 10, fontOfSize: 12, textStr: videoUrl[index].desc!, lineSpacing: 5)
+//        h += MultilineLabel.caculateHeight(width: self.layout.getItemWidth() - 10, fontOfSize: 12, textStr: videoUrl[index].desc!, lineSpacing: 5)
         // 图标高度
         h += 20
         // 总间隔高度
