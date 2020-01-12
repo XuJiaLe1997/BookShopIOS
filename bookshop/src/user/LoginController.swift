@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, DropBoxDelegate {
     
     var accountTextField: EWTextField!
     var passwordTextField: EWTextField!
@@ -31,9 +31,10 @@ class LoginController: UIViewController {
                                                      width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: false)
         accountTextField.setTitle("账号", ofSize: 18)
         accountTextField.clearButtonMode = .always
-        scrollView.addSubview(accountTextField)
+        let dropBoxTextField = DropBoxTextField(textField: accountTextField, delegate: self)
+        scrollView.addSubview(dropBoxTextField)
         
-        passwordTextField = EWTextField(frame: CGRect(x: xOffset, y: accountTextField.frame.maxY + 30,
+        passwordTextField = EWTextField(frame: CGRect(x: xOffset, y: accountTextField.frame.maxY + 100,
                                                       width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: true)
         passwordTextField.setTitle("密码", ofSize: 18)
         scrollView.addSubview(passwordTextField)
@@ -61,6 +62,7 @@ class LoginController: UIViewController {
         forgetBtn.setTitleColor(UIColor.darkGray, for: .normal)
         scrollView.addSubview(forgetBtn)
         
+        scrollView.bringSubviewToFront(dropBoxTextField)
     }
     
     @objc func login() {
@@ -87,6 +89,23 @@ class LoginController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func count() -> Int {
+        return CommonUtil.getAccountList().count
+    }
+    
+    func setItem(_ forItem: Int) -> [String : Any?] {
+        return ["text": CommonUtil.getAccountList()[forItem].account, "img": CommonUtil.getAccountList()[forItem].getImg()]
+    }
+    
+    func didSelectItemAt(_ forItem: Int) {
+        accountTextField.placeholderUp()
+        accountTextField.bottomLine.isHidden = false
+        accountTextField.text = CommonUtil.getAccountList()[forItem].account
+    }
+    
+    func heightForItem(_ forItem: Int) -> CGFloat {
+        return 40
+    }
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

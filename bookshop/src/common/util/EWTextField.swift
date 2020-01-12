@@ -19,7 +19,7 @@ import UIKit
 class EWTextField: UITextField {
     
     // 文本框的底部横线
-    private let bottomLine : CALayer = {
+    let bottomLine : CALayer = {
         let line = CALayer()
         line.backgroundColor = ColorUtil.use255Color(red: 79, green: 176, blue: 255, alpha: 1).cgColor
         line.isHidden = true
@@ -115,8 +115,9 @@ class  UITextFieldDelegateImpl: UIViewController, UITextFieldDelegate {
         }
         if textField.text == ""{
             textField.placeholderUp()
+            textField.bottomLine.isHidden = false
         }
-        textField.changeLineHidden()
+//        textField.changeLineHidden()
         return true
     }
     
@@ -127,7 +128,8 @@ class  UITextFieldDelegateImpl: UIViewController, UITextFieldDelegate {
         }
         if textField.text == "" {
             textField.placeholderDown()
+            textField.bottomLine.isHidden = true
         }
-        textField.changeLineHidden()
+//        textField.changeLineHidden()
     }
 }

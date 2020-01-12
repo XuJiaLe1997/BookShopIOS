@@ -38,6 +38,11 @@ extension UserDefaultsSettable where key.RawValue == String {
         let aKey = key.rawValue
         return UserDefaults.standard.object(forKey: aKey)
     }
+    
+    static func array(forKey key: key) -> [Any]? {
+        let aKey = key.rawValue
+        return UserDefaults.standard.array(forKey: aKey)
+    }
 }
 
 extension UserDefaults {

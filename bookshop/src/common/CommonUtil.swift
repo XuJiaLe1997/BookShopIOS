@@ -37,6 +37,7 @@ class CommonUtil {
     
     private static var curUser: User?
     private static var userList: [User] = [User]()
+    private static var accountList: [User] = [User]()
     
     static func login(account: String, password: String) -> Response {
         for u in userList {
@@ -44,6 +45,7 @@ class CommonUtil {
                 if(u.password == password){
                     curUser = u
                     UserDefaults.LoginInfo.set(value: u.toNSData(), forKey: .user)
+                    saveLoginHistory(user: u)
                     return Response(isSuccess: true, msg: "登录成功")
                 } else {
                     return Response(isSuccess: false, msg: "密码错误")
@@ -51,6 +53,25 @@ class CommonUtil {
             }
         }
         return Response(isSuccess: false, msg: "账号不存在");
+    }
+    
+    // 保存登录历史
+    private static func saveLoginHistory(user: User) {
+        for u in accountList {
+            if(u.account == user.account) {
+                return
+            }
+        }
+        accountList.append(user)
+        var accData = [NSData]()
+        for u in accountList {
+            accData.append(u.toNSData())
+        }
+        UserDefaults.AccountInfo.set(value: accData, forKey: .userList)
+    }
+    
+    static func getAccountList() -> [User]{
+        return accountList
     }
     
     static func register(account: String, password: String) -> Response {
@@ -226,6 +247,16 @@ class CommonUtil {
             addUser(u: User(account: "admin", password: "admin"))
         }
         
+        if let accData = (UserDefaults.AccountInfo.array(forKey: .userList) as? [Data]) {
+            print("已加载所有账号登录历史")
+            for data in accData {
+                let u = NSKeyedUnarchiver.unarchiveObject(with: data) as? User
+                accountList.append(u!)
+            }
+        } else {
+            print("获取所有账号登录历史失败")
+        }
+    
         // 开发状态下直接登录管理员
         if(Config.autoLogin){
             print("开发状态 - 免登录")

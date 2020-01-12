@@ -34,6 +34,8 @@
 		A25E9EA423ACE14800EEE779 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA323ACE14800EEE779 /* OrderController.swift */; };
 		A25E9EA623AD044C00EEE779 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */; };
 		A25E9EA823AD155900EEE779 /* BookInfo2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */; };
+		A2688CB223CB50DC00D1C4E0 /* DropBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */; };
+		A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB123CB50DC00D1C4E0 /* DropBox.swift */; };
 		A270737E23BBA31E00983D09 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270737D23BBA31E00983D09 /* AlertUtil.swift */; };
 		A2766C4123C353780037E1BF /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2766C4023C353780037E1BF /* AddressController.swift */; };
 		A2766C4323C367900037E1BF /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2766C4223C367900037E1BF /* AddressCell.swift */; };
@@ -124,6 +126,8 @@
 		A25E9EA323ACE14800EEE779 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo2Cell.swift; sourceTree = "<group>"; };
+		A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxTextField.swift; sourceTree = "<group>"; };
+		A2688CB123CB50DC00D1C4E0 /* DropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBox.swift; sourceTree = "<group>"; };
 		A270737D23BBA31E00983D09 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 		A2766C4023C353780037E1BF /* AddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
 		A2766C4223C367900037E1BF /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 		A2C15C4A23B718A40096D80D /* util */ = {
 			isa = PBXGroup;
 			children = (
+				A2688CB123CB50DC00D1C4E0 /* DropBox.swift */,
+				A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */,
 				A27B60FE23AB125600B73AAF /* CycleScrollView.swift */,
 				A25E9E9D23AC879500EEE779 /* MultilineLabel.swift */,
 				A2EF593A23B633ED007D677C /* CBToast.swift */,
@@ -511,6 +517,7 @@
 				A2EAB92823C829D2001899A5 /* ThemeDictionaryPicker.swift in Sources */,
 				A2EAB94323C8608C001899A5 /* NightSwithCell.swift in Sources */,
 				A2EAB92423C829D2001899A5 /* UITextField+PlaceholderAttributes.swift in Sources */,
+				A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */,
 				A25E9EA223ACAE3600EEE779 /* ShoppingCarCell.swift in Sources */,
 				A2EAB91A23C829D2001899A5 /* NSAttributedString+Merge.swift in Sources */,
 				A2EAB93023C829D2001899A5 /* UILabel+TextAttributes.swift in Sources */,
@@ -549,6 +556,7 @@
 				A27B610123AB75BE00B73AAF /* HomeFunctionCell.swift in Sources */,
 				A2C15C5623B733F00096D80D /* SearchController.swift in Sources */,
 				A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */,
+				A2688CB223CB50DC00D1C4E0 /* DropBoxTextField.swift in Sources */,
 				A2766C4323C367900037E1BF /* AddressCell.swift in Sources */,
 				A2A4631F23C9F37F00911C36 /* PlaybillCell.swift in Sources */,
 				A2EAB92C23C829D2001899A5 /* ThemeManager.swift in Sources */,
