@@ -37,7 +37,7 @@ class EWTextField: UITextField {
     }()
     
     // 所有输入框默认使用此代理实现，便于监听文本状况
-    private static let defaultDelegate: UITextFieldDelegateImpl = UITextFieldDelegateImpl()
+    private static let defaultDelegate = UITextFieldDelegateImpl()
     
     init(frame:CGRect, isSecure:Bool) {
         super.init(frame:frame)
@@ -106,7 +106,7 @@ class EWTextField: UITextField {
 }
 
 // 监听输入框输入状态
-class  UITextFieldDelegateImpl: UIViewController, UITextFieldDelegate {
+private class UITextFieldDelegateImpl: NSObject, UITextFieldDelegate {
     
     // 开始输入时，若文本框为空，placeholder自动上浮
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -117,7 +117,6 @@ class  UITextFieldDelegateImpl: UIViewController, UITextFieldDelegate {
             textField.placeholderUp()
             textField.bottomLine.isHidden = false
         }
-//        textField.changeLineHidden()
         return true
     }
     
@@ -130,6 +129,5 @@ class  UITextFieldDelegateImpl: UIViewController, UITextFieldDelegate {
             textField.placeholderDown()
             textField.bottomLine.isHidden = true
         }
-//        textField.changeLineHidden()
     }
 }

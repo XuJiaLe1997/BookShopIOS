@@ -39,7 +39,7 @@ class UserController: UITableViewController {
         if(CommonUtil.getUser() == nil) {
             print("用户未登录")
             nicknameTextView.text = "未登录"
-            headImage.image = UIImage(named: "user_head_3")
+            headImage.theme_image = ThemeImagePicker(keyPath: "userHeadCell.headImage")
         } else {
             headImage.image = CommonUtil.getUser()?.getImg()
             nicknameTextView.text = CommonUtil.getUser()?.nickname
