@@ -94,7 +94,12 @@ class LoginController: UIViewController, DropBoxDelegate {
     }
     
     func setItem(_ forItem: Int) -> [String : Any?] {
-        return ["text": CommonUtil.getAccountList()[forItem].account, "img": CommonUtil.getAccountList()[forItem].getImg()]
+        let item = CommonUtil.getAccountList()[forItem]
+        var img = item.img
+        if(img == nil) {
+            img = UIImage(named: "user_head_2")
+        }
+        return ["text": item.account, "img":img]
     }
     
     func didSelectItemAt(_ forItem: Int) {

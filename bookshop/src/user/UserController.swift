@@ -41,7 +41,12 @@ class UserController: UITableViewController {
             nicknameTextView.text = "未登录"
             headImage.theme_image = ThemeImagePicker(keyPath: "userHeadCell.headImage")
         } else {
-            headImage.image = CommonUtil.getUser()?.getImg()
+            let img = CommonUtil.getUser()?.img
+            if(img == nil) {
+                headImage.theme_image = ThemeImagePicker(keyPath: "userHeadCell.headImage")
+            } else {
+                headImage.image = img
+            }
             nicknameTextView.text = CommonUtil.getUser()?.nickname
         }
     }

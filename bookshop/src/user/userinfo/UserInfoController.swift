@@ -36,7 +36,11 @@ class UserInfoController: UITableViewController, UIImagePickerControllerDelegate
         headImage.layer.cornerRadius = headImage.frame.width / 2
         headImage.contentMode = .scaleToFill
         
-        headImage.image = CommonUtil.getUser()?.getImg()
+        if(CommonUtil.getUser()?.img != nil) {
+            headImage.image = CommonUtil.getUser()?.img
+        } else {
+            headImage.image = UIImage(named: "user_head_2")
+        }
         accountLabel.text = CommonUtil.getUser()?.account
         nicknameTF.text = CommonUtil.getUser()?.nickname
     }

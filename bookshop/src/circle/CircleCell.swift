@@ -31,7 +31,11 @@ class CircleCell: UICollectionViewCell {
         head.layer.masksToBounds = true
         head.layer.cornerRadius = head.frame.width / 2
         head.contentMode = .scaleToFill
-        head.image = owner.getImg()
+        if(owner.img != nil) {
+            head.image = owner.img
+        } else {
+            head.image = UIImage(named: "user_head_2")
+        }
         self.addSubview(head)
         
         // 作者昵称

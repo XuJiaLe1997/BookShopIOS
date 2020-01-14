@@ -35,15 +35,6 @@ class User: NSObject, NSCoding{
         self.img = img
     }
     
-    // 获取头像
-    func getImg() -> UIImage {
-        if(img == nil) {
-            return UIImage(named: "user_head_2")!
-        } else {
-            return img!
-        }
-    }
-    
     func getAddrList() -> [Address] {
         if(addrList == nil) {
             addrList = [Address]()
