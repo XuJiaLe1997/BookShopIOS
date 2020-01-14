@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // tabBarItem样式，若使用故事板推荐25*25的icon
         let tabBarItem = UITabBarItem.appearance()
         tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)], for: .normal)
-        tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 5)
+        tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {

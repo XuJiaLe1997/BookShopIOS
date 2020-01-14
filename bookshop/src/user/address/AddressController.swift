@@ -44,9 +44,17 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
     // 初始化表单
     func initForm() {
         
-        let w = self.view.frame.width - 100
+        // 整个屏幕的尺寸，不包括导航栏
+        var bounds = CGSize(width: view.frame.width, height: view.frame.height)
+        bounds.height -= (navigationController?.navigationBar.frame.height)!
         
-        form = UIView(frame: CGRect(x: 50, y: 200, width: w, height: 400))
+        let h = bounds.height > 400 ? CGFloat(400) : bounds.height
+        let w = bounds.width > 300 ? CGFloat(300) : bounds.width
+        
+        let x = (bounds.width - w) / 2
+        let y = (bounds.height - h) / 2
+        
+        form = UIView(frame: CGRect(x: x, y: y, width: w, height: h))
         form.layer.backgroundColor = UIColor.white.cgColor
         form.layer.cornerRadius = 10
         form.layer.shadowOpacity = 0.5  // 不透明度

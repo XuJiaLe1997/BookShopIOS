@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let ScreenWidth  = UIScreen.main.bounds.width
     let numberOfFunction = 4
@@ -18,17 +18,20 @@ class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollection
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let layout = UICollectionViewFlowLayout.init()
-        // 平分减去间距后的宽度，固定高100
-        layout.itemSize = CGSize(width: (self.frame.width - CGFloat(numberOfFunction + 1) * 5)/CGFloat(numberOfFunction), height: 100)
         // 行间距
         layout.minimumLineSpacing = 0
-        // 列间距
+        // 最小列间距
         layout.minimumInteritemSpacing = 5
-        // 内局
-        layout.sectionInset = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
+        // item平分(减去间距后的)屏幕宽度，但不应小于60，否则允许水平滑动
+        var w = (ScreenWidth - layout.minimumInteritemSpacing * CGFloat(numberOfFunction - 1))/CGFloat(numberOfFunction)
+        if(w < 60) {
+            w = 60
+            layout.scrollDirection = .horizontal
+        }
+        layout.itemSize = CGSize(width: w, height: 100)
+        
         
         let collectionView = UICollectionView.init(frame: CGRect(x:0, y:0, width: ScreenWidth, height:100), collectionViewLayout: layout)
-        collectionView.isScrollEnabled = false
         collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -45,7 +48,7 @@ class HomeFunctionCell: UITableViewCell,UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return numberOfFunction
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
