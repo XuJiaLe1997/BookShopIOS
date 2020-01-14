@@ -19,6 +19,10 @@
 		A20E7BA423A8C04A0009F2C9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7BA323A8C04A0009F2C9 /* UserController.swift */; };
 		A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A233609723C5FAA100D68D46 /* ColorUtil.swift */; };
 		A233609A23C603EB00D68D46 /* EWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A233609923C603EB00D68D46 /* EWTextField.swift */; };
+		A246AD1423CDA64B009321FF /* Yellow.plist in Resources */ = {isa = PBXBuildFile; fileRef = A246AD1123CDA64A009321FF /* Yellow.plist */; };
+		A246AD1523CDA64B009321FF /* Blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = A246AD1223CDA64A009321FF /* Blue.plist */; };
+		A246AD1623CDA64B009321FF /* Green.plist in Resources */ = {isa = PBXBuildFile; fileRef = A246AD1323CDA64A009321FF /* Green.plist */; };
+		A246AD1823CDAA5F009321FF /* ThemeSwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */; };
 		A248173223A9E8B900CF3B9C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173123A9E8B900CF3B9C /* SettingController.swift */; };
 		A248173423A9E98400CF3B9C /* CheckUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173323A9E98400CF3B9C /* CheckUpdateController.swift */; };
 		A248173823A9EF8300CF3B9C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173723A9EF8300CF3B9C /* Config.swift */; };
@@ -88,7 +92,7 @@
 		A2EAB93D23C82A7B001899A5 /* Red.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2EAB93A23C82A7B001899A5 /* Red.plist */; };
 		A2EAB93F23C82B5C001899A5 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB93E23C82B5C001899A5 /* MyThemes.swift */; };
 		A2EAB94123C85F6C001899A5 /* CheckUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94023C85F6C001899A5 /* CheckUpdateCell.swift */; };
-		A2EAB94323C8608C001899A5 /* NightSwithCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94223C8608C001899A5 /* NightSwithCell.swift */; };
+		A2EAB94323C8608C001899A5 /* ThemeSwithCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94223C8608C001899A5 /* ThemeSwithCell.swift */; };
 		A2EAB94523C860B7001899A5 /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94423C860B7001899A5 /* LogoutCell.swift */; };
 		A2EAB94723C8799F001899A5 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94623C8799F001899A5 /* BaseCell.swift */; };
 		A2EAB94923C87EF6001899A5 /* UserHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94823C87EF6001899A5 /* UserHeadCell.swift */; };
@@ -111,6 +115,10 @@
 		A20E7BA323A8C04A0009F2C9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		A233609723C5FAA100D68D46 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		A233609923C603EB00D68D46 /* EWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWTextField.swift; sourceTree = "<group>"; };
+		A246AD1123CDA64A009321FF /* Yellow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Yellow.plist; sourceTree = "<group>"; };
+		A246AD1223CDA64A009321FF /* Blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Blue.plist; sourceTree = "<group>"; };
+		A246AD1323CDA64A009321FF /* Green.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Green.plist; sourceTree = "<group>"; };
+		A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitchController.swift; sourceTree = "<group>"; };
 		A248173123A9E8B900CF3B9C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A248173323A9E98400CF3B9C /* CheckUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateController.swift; sourceTree = "<group>"; };
 		A248173723A9EF8300CF3B9C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -180,7 +188,7 @@
 		A2EAB93A23C82A7B001899A5 /* Red.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Red.plist; sourceTree = "<group>"; };
 		A2EAB93E23C82B5C001899A5 /* MyThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
 		A2EAB94023C85F6C001899A5 /* CheckUpdateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateCell.swift; sourceTree = "<group>"; };
-		A2EAB94223C8608C001899A5 /* NightSwithCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightSwithCell.swift; sourceTree = "<group>"; };
+		A2EAB94223C8608C001899A5 /* ThemeSwithCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwithCell.swift; sourceTree = "<group>"; };
 		A2EAB94423C860B7001899A5 /* LogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCell.swift; sourceTree = "<group>"; };
 		A2EAB94623C8799F001899A5 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		A2EAB94823C87EF6001899A5 /* UserHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeadCell.swift; sourceTree = "<group>"; };
@@ -302,8 +310,9 @@
 				A248173123A9E8B900CF3B9C /* SettingController.swift */,
 				A248173323A9E98400CF3B9C /* CheckUpdateController.swift */,
 				A2EAB94023C85F6C001899A5 /* CheckUpdateCell.swift */,
-				A2EAB94223C8608C001899A5 /* NightSwithCell.swift */,
+				A2EAB94223C8608C001899A5 /* ThemeSwithCell.swift */,
 				A2EAB94423C860B7001899A5 /* LogoutCell.swift */,
+				A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -416,6 +425,9 @@
 		A2EAB93723C82A31001899A5 /* plist */ = {
 			isa = PBXGroup;
 			children = (
+				A246AD1223CDA64A009321FF /* Blue.plist */,
+				A246AD1323CDA64A009321FF /* Green.plist */,
+				A246AD1123CDA64A009321FF /* Yellow.plist */,
 				A2EAB93823C82A7B001899A5 /* Night.plist */,
 				A2EAB93A23C82A7B001899A5 /* Red.plist */,
 			);
@@ -488,10 +500,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A246AD1423CDA64B009321FF /* Yellow.plist in Resources */,
+				A246AD1523CDA64B009321FF /* Blue.plist in Resources */,
 				A20E7B9023A8B5300009F2C9 /* LaunchScreen.storyboard in Resources */,
 				A2EAB93D23C82A7B001899A5 /* Red.plist in Resources */,
 				A20E7B8D23A8B5300009F2C9 /* Assets.xcassets in Resources */,
 				A20E7B8B23A8B52A0009F2C9 /* Main.storyboard in Resources */,
+				A246AD1623CDA64B009321FF /* Green.plist in Resources */,
 				A2EAB93B23C82A7B001899A5 /* Night.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +530,7 @@
 				A2766C4123C353780037E1BF /* AddressController.swift in Sources */,
 				A25E9EA623AD044C00EEE779 /* MainTabBarController.swift in Sources */,
 				A2EAB92823C829D2001899A5 /* ThemeDictionaryPicker.swift in Sources */,
-				A2EAB94323C8608C001899A5 /* NightSwithCell.swift in Sources */,
+				A2EAB94323C8608C001899A5 /* ThemeSwithCell.swift in Sources */,
 				A2EAB92423C829D2001899A5 /* UITextField+PlaceholderAttributes.swift in Sources */,
 				A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */,
 				A25E9EA223ACAE3600EEE779 /* ShoppingCarCell.swift in Sources */,
@@ -549,6 +564,7 @@
 				A2EAB91C23C829D2001899A5 /* ThemeStringAttributesPicker.swift in Sources */,
 				A27B610623ABC68A00B73AAF /* BookDetailController.swift in Sources */,
 				A25E9E9E23AC879500EEE779 /* MultilineLabel.swift in Sources */,
+				A246AD1823CDAA5F009321FF /* ThemeSwitchController.swift in Sources */,
 				A2EAB93123C829D2001899A5 /* NSObject+Theme.swift in Sources */,
 				A2EAB91B23C829D2001899A5 /* ThemeStatusBarStylePicker.swift in Sources */,
 				A20E7BA223A8BD8D0009F2C9 /* User.swift in Sources */,

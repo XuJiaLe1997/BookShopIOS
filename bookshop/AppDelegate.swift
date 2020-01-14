@@ -28,14 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func initTheme() {
         
-        let themeStyle = UserDefaults.AppInfo.string(forKey: .themeStyle)
-        if (themeStyle == nil || themeStyle != "Night") {
-            UserDefaults.AppInfo.set(value: "Red", forKey: .themeStyle)
-            MyThemes.switchTo(.red)
-        } else {
-            ThemeManager.setTheme(plistName: "Night", path: .mainBundle)
-            MyThemes.switchTo(.night)
+        var themeStyle = UserDefaults.AppInfo.string(forKey: .themeStyle)
+        if (themeStyle == nil) {
+            UserDefaults.AppInfo.set(value: MyThemes.red.rawValue, forKey: .themeStyle)
+            themeStyle = MyThemes.red.rawValue
         }
+        ThemeManager.setTheme(plistName: themeStyle!, path: .mainBundle)
         
         // 顶部状态栏
         UIApplication.shared.theme_setStatusBarStyle("UIStatusBarStyle", animated: true)

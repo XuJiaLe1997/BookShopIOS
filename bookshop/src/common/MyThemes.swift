@@ -8,44 +8,17 @@
 
 import Foundation
 
-enum MyThemes: Int {
+enum MyThemes: String {
     
-    case red   = 0
-    case night = 1
-    
-    static var current = MyThemes.red
-    static var before  = MyThemes.red
+    case red    = "Red"
+    case night  = "Night"
+    case blue   = "Blue"
+    case green  = "Green"
+    case yellow = "Yellow"
     
     static func switchTo(_ theme: MyThemes) {
-        before  = current
-        current = theme
-        
-        switch theme {
-        case .red   :
-            UserDefaults.AppInfo.set(value: "Red", forKey: .themeStyle)
-            ThemeManager.setTheme(plistName: "Red", path: .mainBundle)
-        case .night :
-            UserDefaults.AppInfo.set(value: "Night", forKey: .themeStyle)
-            ThemeManager.setTheme(plistName: "Night", path: .mainBundle)
-        }
+        UserDefaults.AppInfo.set(value: theme.rawValue, forKey: .themeStyle)
+        ThemeManager.setTheme(plistName: theme.rawValue, path: .mainBundle)
     }
     
-    static func switchToNext() {
-        var next = current.rawValue + 1
-        let max  = 1 // without Night
-        
-        if next >= max { next = 0 }
-        
-        switchTo(MyThemes(rawValue: next)!)
-    }
-    
-    // MARK: - Switch Night
-    
-    static func switchNight(_ isToNight: Bool) {
-        switchTo(isToNight ? .night : before)
-    }
-    
-    static func isNight() -> Bool {
-        return current == .night
-    }
 }

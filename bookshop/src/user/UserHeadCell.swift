@@ -19,10 +19,10 @@ class UserHeadCell: UITableViewCell {
         
         self.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.barTintColor")
         
-        nicknameTextView.theme_textColor = ThemeColorPicker(keyPath: "userHeadCell.textColor")
+        nicknameTextView.theme_textColor = ThemeColorPicker(keyPath: "Global.barTextColor")
         nicknameTextView.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.barTintColor")
         
-        descTextView.theme_textColor = ThemeColorPicker(keyPath: "userHeadCell.textColor")
+        descTextView.theme_textColor = ThemeColorPicker(keyPath: "Global.barTextColor")
         descTextView.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.barTintColor")
     }
 }
