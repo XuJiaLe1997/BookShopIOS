@@ -1,0 +1,70 @@
+/**清除默认样式 **/
+*{
+	padding: 0px;
+	margin:0px;
+}
+
+a{
+	text-decoration: none;
+}
+
+a img { 
+	border: none;
+}
+
+a:link {
+	color: #42413C;
+}
+a:visited {
+	color: #6E6C64;
+}
+a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠标使用者相同的悬停体验。 */
+}
+
+/**头部样式 **/
+#pageHead{
+	background-color: #FF6A00;
+	padding:0.5em;
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+	top:0;
+	z-index: 11;
+}
+
+/**头部菜单 **/
+#pageHead nav{
+	margin-top: 0.5em;
+}
+
+#pageHead ul{
+	list-style: none;
+}
+
+#pageHead ul li{
+	float: left;
+	margin-right: 1em;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+
+#pageHead ul li a{
+	color: #ffffff;
+}
+
+#pageHead ul .onSelected{
+	background-color: #ffffff;
+}
+#pageHead ul .onSelected a{
+	color: #FF6A00;
+}
+
+article{
+	margin-top: 5.4em;
+	margin-left: 0.5em;
+}
+
+
+.clear{
+	clear: both;
+}

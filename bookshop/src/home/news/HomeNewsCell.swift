@@ -14,6 +14,7 @@ class HomeNewsCell: UITableViewCell, CycleScrollViewDelegate {
     
     var cycleView: CycleScrollView!
     var isInit: Bool = false
+    private var parentVC: UIViewController?
     
     let imgSet: [UIImage] = [
         UIImage(named: "gundong1")!,
@@ -23,12 +24,13 @@ class HomeNewsCell: UITableViewCell, CycleScrollViewDelegate {
         UIImage(named: "gundong5")!
     ]
     
-    func initCycleView(){
+    func initCycleView(parentVC: UIViewController){
         if(!isInit){    // 防止重复初始化
             print("初始化图片轮播器")
             cycleView = CycleScrollView(frame: CGRect.init(x: 0, y: 50, width: self.frame.width, height: 150), delegate: self)
             cycleView.rollingEnable = true
             self.addSubview(cycleView)
+            self.parentVC = parentVC
             isInit = true
         }
     }
@@ -42,7 +44,18 @@ class HomeNewsCell: UITableViewCell, CycleScrollViewDelegate {
     }
     
     func cycleImageViewClick(_ index: Int) {
-        print("点击了图片" + String(index))
+        var newsPath = CommonUtil.getNewsPath()?[index]
+        if(newsPath == nil) {
+            newsPath = "/Users/xujiale/XcodeProject/bookshop/bookshop/resources/h5/index.html"
+        }
+        let news = WebController(path: newsPath!)
+        let navController = UINavigationController(rootViewController: news)
+        
+        parentVC?.present(navController, animated: true, completion: nil)
+    }
+    
+    @objc func back(vc: UIViewController) {
+        vc.dismiss(animated: true, completion: nil)
     }
 }
 

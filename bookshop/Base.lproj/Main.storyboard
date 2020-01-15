@@ -756,7 +756,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_1" translatesAutoresizingMaskIntoConstraints="NO" id="CP2-IM-8DH">
-                                                <rect key="frame" x="87" y="100" width="240.00000000000006" height="240"/>
+                                                <rect key="frame" x="87" y="100" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="O9P-9B-QKh"/>
                                                     <constraint firstAttribute="width" constant="240" id="xRR-xW-ics"/>
@@ -1403,7 +1403,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipL-9n-azO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-619" y="1717"/>
+            <point key="canvasLocation" x="-930" y="1717"/>
         </scene>
     </scenes>
     <resources>
@@ -1418,6 +1418,6 @@
         <image name="支付宝" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VWm-ec-jcH"/>
+        <segue reference="uua-ZP-0T8"/>
     </inferredMetricsTieBreakers>
 </document>

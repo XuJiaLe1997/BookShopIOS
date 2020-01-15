@@ -45,7 +45,7 @@ class HomeController: UITableViewController {
             return functionCell
         } else if(indexPath.section == 1) {
             let newsCell = tableView.dequeueReusableCell(withIdentifier: "homeNewsCell") as! HomeNewsCell
-            newsCell.initCycleView()
+            newsCell.initCycleView(parentVC: self)
             return newsCell
         } else {
             let bookCell = tableView.dequeueReusableCell(withIdentifier: "homeBookCell", for: indexPath) as! HomeBookCell

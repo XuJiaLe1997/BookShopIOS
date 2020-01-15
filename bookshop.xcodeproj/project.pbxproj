@@ -38,9 +38,9 @@
 		A25E9EA423ACE14800EEE779 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA323ACE14800EEE779 /* OrderController.swift */; };
 		A25E9EA623AD044C00EEE779 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */; };
 		A25E9EA823AD155900EEE779 /* BookInfo2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */; };
+		A25FE70023CDE22B0014E1C2 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25FE6FF23CDE22B0014E1C2 /* WebController.swift */; };
 		A2688CB223CB50DC00D1C4E0 /* DropBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */; };
 		A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB123CB50DC00D1C4E0 /* DropBox.swift */; };
-		A270737E23BBA31E00983D09 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270737D23BBA31E00983D09 /* AlertUtil.swift */; };
 		A2766C4123C353780037E1BF /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2766C4023C353780037E1BF /* AddressController.swift */; };
 		A2766C4323C367900037E1BF /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2766C4223C367900037E1BF /* AddressCell.swift */; };
 		A27B60FF23AB125600B73AAF /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B60FE23AB125600B73AAF /* CycleScrollView.swift */; };
@@ -98,6 +98,8 @@
 		A2EAB94923C87EF6001899A5 /* UserHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EAB94823C87EF6001899A5 /* UserHeadCell.swift */; };
 		A2EF593223B630B4007D677C /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF593123B630B4007D677C /* UserInfoController.swift */; };
 		A2EF593B23B633ED007D677C /* CBToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF593A23B633ED007D677C /* CBToast.swift */; };
+		A2F98C6523CEEC760061BED4 /* h5 in Resources */ = {isa = PBXBuildFile; fileRef = A2F98C6423CEEC760061BED4 /* h5 */; };
+		A2F98C6723CF48320061BED4 /* DropBoxMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F98C6623CF48320061BED4 /* DropBoxMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,9 +136,9 @@
 		A25E9EA323ACE14800EEE779 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo2Cell.swift; sourceTree = "<group>"; };
+		A25FE6FF23CDE22B0014E1C2 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxTextField.swift; sourceTree = "<group>"; };
 		A2688CB123CB50DC00D1C4E0 /* DropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBox.swift; sourceTree = "<group>"; };
-		A270737D23BBA31E00983D09 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 		A2766C4023C353780037E1BF /* AddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
 		A2766C4223C367900037E1BF /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		A27B60FE23AB125600B73AAF /* CycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,8 @@
 		A2EAB94823C87EF6001899A5 /* UserHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeadCell.swift; sourceTree = "<group>"; };
 		A2EF593123B630B4007D677C /* UserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
 		A2EF593A23B633ED007D677C /* CBToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToast.swift; sourceTree = "<group>"; };
+		A2F98C6423CEEC760061BED4 /* h5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = h5; sourceTree = "<group>"; };
+		A2F98C6623CF48320061BED4 /* DropBoxMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropBoxMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,10 +258,10 @@
 		A20E7B9A23A8B61B0009F2C9 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				A25FE6FE23CDE1B90014E1C2 /* news */,
 				A2C15C4923B70E260096D80D /* functioncell */,
 				A27B610223ABC65900B73AAF /* bookDetail */,
 				A248173F23AA826600CF3B9C /* HomeController.swift */,
-				A248174123AA82CD00CF3B9C /* HomeNewsCell.swift */,
 				A248174323AA831D00CF3B9C /* HomeBookCell.swift */,
 			);
 			path = home;
@@ -317,6 +321,14 @@
 			path = setting;
 			sourceTree = "<group>";
 		};
+		A25FE6FE23CDE1B90014E1C2 /* news */ = {
+			isa = PBXGroup;
+			children = (
+				A248174123AA82CD00CF3B9C /* HomeNewsCell.swift */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
 		A2766C3F23C350480037E1BF /* address */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,16 +377,17 @@
 			children = (
 				A2688CB123CB50DC00D1C4E0 /* DropBox.swift */,
 				A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */,
+				A2F98C6623CF48320061BED4 /* DropBoxMenu.swift */,
 				A27B60FE23AB125600B73AAF /* CycleScrollView.swift */,
 				A25E9E9D23AC879500EEE779 /* MultilineLabel.swift */,
 				A2EF593A23B633ED007D677C /* CBToast.swift */,
-				A270737D23BBA31E00983D09 /* AlertUtil.swift */,
 				A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */,
 				A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */,
 				A20A1D4723C4A1840013A7CF /* LinearTextField.swift */,
 				A20A1D4923C4A4580013A7CF /* StringUtil.swift */,
 				A233609723C5FAA100D68D46 /* ColorUtil.swift */,
 				A233609923C603EB00D68D46 /* EWTextField.swift */,
+				A25FE6FF23CDE22B0014E1C2 /* WebController.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -417,6 +430,7 @@
 		A2EAB93623C82A24001899A5 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				A2F98C6423CEEC760061BED4 /* h5 */,
 				A2EAB93723C82A31001899A5 /* plist */,
 			);
 			path = resources;
@@ -500,6 +514,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F98C6523CEEC760061BED4 /* h5 in Resources */,
 				A246AD1423CDA64B009321FF /* Yellow.plist in Resources */,
 				A246AD1523CDA64B009321FF /* Blue.plist in Resources */,
 				A20E7B9023A8B5300009F2C9 /* LaunchScreen.storyboard in Resources */,
@@ -519,7 +534,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2EAB91E23C829D2001899A5 /* ThemeStatePicker.swift in Sources */,
-				A270737E23BBA31E00983D09 /* AlertUtil.swift in Sources */,
 				A2C15C5423B72EC30096D80D /* GoodCollectionCell.swift in Sources */,
 				A20A1D4A23C4A4580013A7CF /* StringUtil.swift in Sources */,
 				A2EAB92D23C829D2001899A5 /* ThemeManager+Index.swift in Sources */,
@@ -533,6 +547,7 @@
 				A2EAB94323C8608C001899A5 /* ThemeSwithCell.swift in Sources */,
 				A2EAB92423C829D2001899A5 /* UITextField+PlaceholderAttributes.swift in Sources */,
 				A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */,
+				A25FE70023CDE22B0014E1C2 /* WebController.swift in Sources */,
 				A25E9EA223ACAE3600EEE779 /* ShoppingCarCell.swift in Sources */,
 				A2EAB91A23C829D2001899A5 /* NSAttributedString+Merge.swift in Sources */,
 				A2EAB93023C829D2001899A5 /* UILabel+TextAttributes.swift in Sources */,
@@ -549,6 +564,7 @@
 				A248174423AA831D00CF3B9C /* HomeBookCell.swift in Sources */,
 				A20A1D4623C466620013A7CF /* Address.swift in Sources */,
 				A28484D323C0E0BB00B7C3E1 /* Video.swift in Sources */,
+				A2F98C6723CF48320061BED4 /* DropBoxMenu.swift in Sources */,
 				A2EAB92123C829D2001899A5 /* UIColorExtension.swift in Sources */,
 				A2EAB92523C829D2001899A5 /* ThemeImagePicker.swift in Sources */,
 				A2C15C4C23B71BD80096D80D /* SearchCollectionCell.swift in Sources */,

@@ -131,6 +131,20 @@ class CommonUtil {
     
     private static var bookList: [Book] = [Book]()
     
+    static func getNewsPath() -> [String]? {
+        // 从本地Main Bundle获取h5
+        let path1 = Bundle.main.path(forResource: "index1", ofType: ".html", inDirectory: "h5")!
+        let path2 = Bundle.main.path(forResource: "index2", ofType: ".html", inDirectory: "h5")!
+        let path3 = Bundle.main.path(forResource: "index3", ofType: ".html", inDirectory: "h5")!
+        let path4 = Bundle.main.path(forResource: "index4", ofType: ".html", inDirectory: "h5")!
+        let path5 = Bundle.main.path(forResource: "index5", ofType: ".html", inDirectory: "h5")!
+        return [path1, path2, path3, path4, path5]
+    }
+    
+    static func getErrorPath() -> String {
+        return Bundle.main.path(forResource: "error", ofType: ".html", inDirectory: "h5")!
+    }
+    
     static func getBookList() -> ([Book]){
         return bookList
     }
