@@ -63,6 +63,6 @@ class User: NSObject, NSCoding{
     }
     
     func toNSData() -> NSData{
-        return NSKeyedArchiver.archivedData(withRootObject: self) as! NSData
+        return NSKeyedArchiver.archivedData(withRootObject: self) as NSData
     }
 }
