@@ -31,14 +31,13 @@ class DropBoxView: UITableView, UITableViewDelegate, UITableViewDataSource {
     var showHeight: CGFloat = 0             // 当前显示的高度
     var isDrop: Bool = false                // 是否处于下拉状态
     
-    fileprivate var dropBoxDelegate: DropBoxDelegate!
+    var dropBoxDelegate: DropBoxDelegate!
     
     // MARK: 样式
     init(frame: CGRect, maxHeight: CGFloat = 200, delegate: DropBoxDelegate) {
         super.init(frame: CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: 0), style: .grouped)
         
         // box style
-        self.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)  // 去除多余空白
         self.separatorStyle = .none
         self.backgroundColor = .clear // 透明背景
         self.delegate = self
@@ -102,7 +101,7 @@ class DropBoxView: UITableView, UITableViewDelegate, UITableViewDataSource {
         isDrop = true
         
         UIView.animate(withDuration: 0.5, animations: {
-            let h = self.contentSize.height
+            let h = self.caculateContentHeight()
             if( h > self.maxHeight) {
                 self.isScrollEnabled = true
                 self.frame.size.height = self.maxHeight
@@ -113,6 +112,13 @@ class DropBoxView: UITableView, UITableViewDelegate, UITableViewDataSource {
                 self.showHeight = h
             }
         })
+    }
+    
+    // 计算实际内容高度，本例为 (item高度 + header高度 + footer高度) * item个数
+    func caculateContentHeight() -> CGFloat {
+        let itemHeight = dropBoxDelegate.heightForItem(0)
+        let itemCount = CGFloat(dropBoxDelegate.count())
+        return  (itemHeight + 1 + 1) * itemCount
     }
     
     func drawUp() {
