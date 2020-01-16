@@ -11,7 +11,7 @@ import Foundation
 class Config{
     
     // 版本号
-    static let version = "0.0.1"
+    static let version = "0.0.2"
     
     // 是否显示作者信息，默认 true
     static let showAuthor = true

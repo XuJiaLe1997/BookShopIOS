@@ -3,12 +3,9 @@
 #### I 基础设置
 语言版本：swift 4.0及以上
 
-Xcode版本：10.0 及以上
+IOS版本：12
 
-最佳虚拟机型：iPhone 8 plus、iPhone XR
-
-适合IOS初学者，有很多不成熟的写法，欢迎提issue指出问题～～
-
+适合IOS初学者，注释清晰。如果有疑问或者改进，欢迎提issue讨论～～
 
 #### II 演示
 
@@ -25,12 +22,12 @@ Xcode版本：10.0 及以上
 
 主要说明一下 bookshop 文件夹下各个目录的划分。
 
-- /src：各个页面主要的代码都保存在这里，以页面名称命名
-- /src/common：一些公用的方法和类，比如User、Book这些实体类，以及以Util结尾的工具类。其中CommonUtil.swift 暂时替代后端服务，提供请求接口，模拟远程请求。
-- /src/home：主页（底部第一栏）
-- /src/circle：圈子（第二栏）
-- /src/shoppingcar：购物车（第三栏）
-- /src/user：个人中心（第四栏）
+- */src*：各个页面主要的代码都保存在这里，以页面名称命名
+- */src/common*：一些公用的方法和类，比如User、Book这些实体类，以及以Util结尾的工具类。其中CommonUtil.swift 暂时替代后端服务，提供请求接口，模拟远程请求。
+- */src/home*：主页（底部第一栏）
+- */src/circle*：圈子（第二栏）
+- */src/shoppingcar*：购物车（第三栏）
+- */src/user*：个人中心（第四栏）
 
 #### IV 其他
 
