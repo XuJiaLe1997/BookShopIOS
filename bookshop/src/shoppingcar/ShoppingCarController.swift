@@ -20,7 +20,7 @@ class ShoppingCarController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         
         let w = self.tableView.frame.width
-        self.img = UIImageView(image: ImageUtil.resize(image: UIImage(named: "img_7")!, size: CGSize(width: w, height: w)) )
+        self.img = UIImageView(image: ImageUtil.resize(image: UIImage(named: "img_7")!, size: CGSize(width: w*2/3, height: w*2/3)) )
         tableView.backgroundView = img
         tableView.backgroundView?.contentMode = .bottomRight
         
