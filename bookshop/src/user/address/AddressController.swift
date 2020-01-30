@@ -21,7 +21,7 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var addBtn: UIButton!
     
     // 表单
-    var form: UIView!
+    var formView: UIVisualEffectView!
     var recvTF: UITextField!
     var phoneTF: UITextField!
     var addrTF: UITextField!
@@ -52,19 +52,15 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
         let w = bounds.width > 300 ? CGFloat(300) : bounds.width
         
         let x = (bounds.width - w) / 2
-        let y = (bounds.height - h) / 2
+        let y = (bounds.height - h) / 3
         
-        form = UIView(frame: CGRect(x: x, y: y, width: w, height: h))
+        let form = UIView(frame: CGRect(x: x, y: y, width: w, height: h))
         form.layer.backgroundColor = UIColor.white.cgColor
         form.layer.cornerRadius = 10
         form.layer.shadowOpacity = 0.5  // 不透明度
         form.layer.shadowRadius = 10
         form.layer.shadowColor = UIColor.lightGray.cgColor
         form.layer.shadowOffset = CGSize(width: 0, height: 0)
-        
-        // 初始隐藏
-        form.isHidden = true
-        form.alpha = 0.0
         
         let titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: w - 20, height: 30))
         titleLabel.text = "编辑地址"
@@ -103,7 +99,20 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
         cancelBtn.addTarget(self, action: #selector(cancelClick), for: .touchUpInside)
         form.addSubview(cancelBtn)
         
-        self.view.addSubview(form)
+        // 毛玻璃效果
+        let blurEffect = UIBlurEffect(style: .light)
+        formView = UIVisualEffectView(effect: blurEffect)
+        formView.frame = self.view.frame
+        formView.isHidden = true
+        formView.alpha = 0.0
+        formView.contentView.addSubview(form)
+        
+        self.view.addSubview(formView)
+    }
+    
+    // 点击空白处回收键盘
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,8 +152,8 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
         isAdd = false
         
         UIView.animate(withDuration: 0.5) { () -> Void in
-            self.form.alpha = 1.0
-            self.form.isHidden = false
+            self.formView.alpha = 1.0
+            self.formView.isHidden = false
         }
         
         // 填充
@@ -160,15 +169,15 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
         isAdd = true
         
         UIView.animate(withDuration: 0.5) { () -> Void in
-            self.form.alpha = 1.0
-            self.form.isHidden = false
+            self.formView.alpha = 1.0
+            self.formView.isHidden = false
         }
     }
     
     // 取消编辑地址
     @objc func cancelClick() {
-        self.form.alpha = 0.0
-        self.form.isHidden = true
+        self.formView.alpha = 0.0
+        self.formView.isHidden = true
         
         recvTF.text = ""
         phoneTF.text = ""
@@ -195,8 +204,8 @@ class AddressController: UIViewController, UITableViewDelegate, UITableViewDataS
             CommonUtil.modifyAddress()
         }
         
-        self.form.alpha = 0.0
-        self.form.isHidden = true
+        self.formView.alpha = 0.0
+        self.formView.isHidden = true
         recvTF.text = ""
         phoneTF.text = ""
         addrTF.text = ""
