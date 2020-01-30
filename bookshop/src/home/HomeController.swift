@@ -15,6 +15,7 @@ class HomeController: UITableViewController {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         self.tableView.register(HomeFunctionCell.classForCoder(), forCellReuseIdentifier: "homeFunctionCell")
+        self.tableView.register(HomeNewsCell.classForCoder(), forCellReuseIdentifier: "homeNewsCell")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,7 +46,7 @@ class HomeController: UITableViewController {
             return functionCell
         } else if(indexPath.section == 1) {
             let newsCell = tableView.dequeueReusableCell(withIdentifier: "homeNewsCell") as! HomeNewsCell
-            newsCell.initCycleView(parentVC: self)
+            newsCell.initCell(parentVC: self)
             return newsCell
         } else {
             let bookCell = tableView.dequeueReusableCell(withIdentifier: "homeBookCell", for: indexPath) as! HomeBookCell

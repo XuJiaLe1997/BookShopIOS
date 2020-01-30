@@ -54,7 +54,7 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
     }
     
     // 滚动间隔
-    public var rollingTime: TimeInterval = 3.0
+    public var rollingTime: TimeInterval = 5.0
     
     // 是否滚动
     public var rollingEnable: Bool = false {

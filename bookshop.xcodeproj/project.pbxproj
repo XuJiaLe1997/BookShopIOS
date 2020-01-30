@@ -41,6 +41,7 @@
 		A25FE70023CDE22B0014E1C2 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25FE6FF23CDE22B0014E1C2 /* WebController.swift */; };
 		A2688CB223CB50DC00D1C4E0 /* DropBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */; };
 		A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB123CB50DC00D1C4E0 /* DropBox.swift */; };
+		A275872423E2C64400BBEC21 /* VerticalCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A275872323E2C64400BBEC21 /* VerticalCycleView.swift */; };
 		A2766C4123C353780037E1BF /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2766C4023C353780037E1BF /* AddressController.swift */; };
 		A2766C4323C367900037E1BF /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2766C4223C367900037E1BF /* AddressCell.swift */; };
 		A27B60FF23AB125600B73AAF /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B60FE23AB125600B73AAF /* CycleScrollView.swift */; };
@@ -139,6 +140,7 @@
 		A25FE6FF23CDE22B0014E1C2 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxTextField.swift; sourceTree = "<group>"; };
 		A2688CB123CB50DC00D1C4E0 /* DropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBox.swift; sourceTree = "<group>"; };
+		A275872323E2C64400BBEC21 /* VerticalCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCycleView.swift; sourceTree = "<group>"; };
 		A2766C4023C353780037E1BF /* AddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
 		A2766C4223C367900037E1BF /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		A27B60FE23AB125600B73AAF /* CycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				A233609723C5FAA100D68D46 /* ColorUtil.swift */,
 				A233609923C603EB00D68D46 /* EWTextField.swift */,
 				A25FE6FF23CDE22B0014E1C2 /* WebController.swift */,
+				A275872323E2C64400BBEC21 /* VerticalCycleView.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				A25E9EA023ACADE100EEE779 /* ShoppingCarController.swift in Sources */,
 				A25E9EA823AD155900EEE779 /* BookInfo2Cell.swift in Sources */,
 				A28484D523C0E4FB00B7C3E1 /* WaterFallLayout.swift in Sources */,
+				A275872423E2C64400BBEC21 /* VerticalCycleView.swift in Sources */,
 				A2EAB94123C85F6C001899A5 /* CheckUpdateCell.swift in Sources */,
 				A2EAB92223C829D2001899A5 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */,
 				A20E7BA023A8B9950009F2C9 /* CommonUtil.swift in Sources */,
