@@ -12,6 +12,7 @@ import UIKit
 class LoginController: UIViewController, DropBoxDelegate {
     
     var accountTextField: EWTextField!
+    var dropBoxTextField: DropBoxTextField!
     var passwordTextField: EWTextField!
     var loginBtn: UIButton!
     var phoneLoginBtn: UIButton!
@@ -31,7 +32,7 @@ class LoginController: UIViewController, DropBoxDelegate {
                                                      width: self.view.frame.width - 2 * xOffset, height: 40), isSecure: false)
         accountTextField.setTitle("账号", ofSize: 18)
         accountTextField.clearButtonMode = .always
-        let dropBoxTextField = DropBoxTextField(textField: accountTextField, delegate: self)
+        dropBoxTextField = DropBoxTextField(textField: accountTextField, delegate: self)
         scrollView.addSubview(dropBoxTextField)
         
         passwordTextField = EWTextField(frame: CGRect(x: xOffset, y: accountTextField.frame.maxY + 100,
@@ -106,6 +107,7 @@ class LoginController: UIViewController, DropBoxDelegate {
         accountTextField.placeholderUp()
         accountTextField.bottomLine.isHidden = false
         accountTextField.text = CommonUtil.getAccountList()[forItem].account
+        dropBoxTextField.drop()
     }
     
     func heightForItem(_ forItem: Int) -> CGFloat {
