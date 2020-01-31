@@ -181,6 +181,9 @@ class CommonUtil {
     private static var shoppingCar: [Book] = [Book]()
     
     static func getShoppingCar() ->[Book] {
+        if(curUser == nil) {
+            shoppingCar.removeAll()
+        }
         return shoppingCar
     }
     
