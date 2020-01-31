@@ -13,14 +13,8 @@
 ### I 功能概要
 
 有图有真相，我当然希望能为这个大作业添加所有流行App都具有的功能，无奈个人力量实在不足，所以我挑了一些比较典型的功能和UI设计进行实现，功能涵盖了最基本的用户登录注册，到比较核心的选购图书，次要的地址管理、搜索，以及比较偏门的主题切换等。
-
 <p>
-    <img src="img/演示1.gif" alt="Sample"  width="200" height="400"/>
-    <img src="img/演示2.gif" alt="Sample"  width="200" height="400"/>
-    <img src="img/演示3.gif" alt="Sample"  width="200" height="400"/>
-    <img src="img/演示4.gif" alt="Sample"  width="200" height="400"/>
-    <img src="img/演示5.gif" alt="Sample"  width="200" height="400"/>
-    <img src="img/演示6.gif" alt="Sample"  width="200" height="400"/>
+    <img src="img/演示图片1.gif" alt="Sample"  width="250" height="500"/>
 </p>
 
 ### II 技术概要
