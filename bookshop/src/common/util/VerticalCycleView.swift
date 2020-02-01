@@ -37,7 +37,7 @@ class VerticalCycleView: UIView, UIScrollViewDelegate {
     
     fileprivate var timer: Timer?
     
-    // 每一次展示两行，默认第一行是当前行
+    // 每一次展示两行，第一行是当前行
     fileprivate var currentIndex = 0 {
         didSet {
             updateItems()
@@ -77,6 +77,7 @@ class VerticalCycleView: UIView, UIScrollViewDelegate {
         scrollView.delegate = self
         addSubview(scrollView)
         
+        // 使用6个Label占位，每次显示的实际上是第3、4个Lable
         for _ in 0..<6 {
             let textView = UILabel()
             scrollView.addSubview(textView)
@@ -116,36 +117,13 @@ class VerticalCycleView: UIView, UIScrollViewDelegate {
     }
     
     fileprivate func updateItems() {
-        
-        var item = delegate.cycleItemFor(getLast(currentIndex, offset: 2))
-        itemTextViews[0].text = item.text
-        itemTagViews[0].text = item.tag
-        itemTagViews[0].textColor = tagColor(item.tag)
-        
-        item = delegate.cycleItemFor(getLast(currentIndex))
-        itemTextViews[1].text = item.text
-        itemTagViews[1].text = item.tag
-        itemTagViews[1].textColor = tagColor(item.tag)
-        
-        item = delegate.cycleItemFor(currentIndex)
-        itemTextViews[2].text = item.text
-        itemTagViews[2].text = item.tag
-        itemTagViews[2].textColor = tagColor(item.tag)
-        
-        item = delegate.cycleItemFor(getNext(currentIndex))
-        itemTextViews[3].text = item.text
-        itemTagViews[3].text = item.tag
-        itemTagViews[3].textColor = tagColor(item.tag)
-        
-        item = delegate.cycleItemFor(getNext(currentIndex, offset: 2))
-        itemTextViews[4].text = item.text
-        itemTagViews[4].text = item.tag
-        itemTagViews[4].textColor = tagColor(item.tag)
-        
-        item = delegate.cycleItemFor(getNext(currentIndex, offset: 3))
-        itemTextViews[5].text = item.text
-        itemTagViews[5].text = item.tag
-        itemTagViews[5].textColor = tagColor(item.tag)
+        // MARK: 做了一些化简，原始逻辑参考Git提交记录
+        for i in 0...5 {
+            let item = delegate.cycleItemFor(getNext(currentIndex, offset: i - 2))
+            itemTextViews[i].text = item.text
+            itemTagViews[i].text = item.tag
+            itemTagViews[i].textColor = tagColor(item.tag)
+        }
         
         scrollView.contentOffset.y = frame.height
     }
@@ -190,6 +168,7 @@ class VerticalCycleView: UIView, UIScrollViewDelegate {
     
     // 每次自动滚动一行的高度
     @objc fileprivate func rolling() {
+        // 从 1/3 的高度滑动到 1/2 的位置，相当于滑动 1/6 的距离
         scrollView.setContentOffset(CGPoint(x: 0, y: frame.height*3/2), animated: true)
     }
     
@@ -209,19 +188,18 @@ class VerticalCycleView: UIView, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let itemH = scrollView.frame.height/2
         
-        if scrollView.contentOffset.y < itemH {
-            currentIndex = getLast(currentIndex, offset: 2)
-        } else if scrollView.contentOffset.y < 2 * itemH {
-            currentIndex = getLast(currentIndex)
-        } else if scrollView.contentOffset.y < 3 * itemH {
-
-        } else if scrollView.contentOffset.y < 4 * itemH {
-            currentIndex = getNext(currentIndex)
-        } else if scrollView.contentOffset.y < 5 * itemH {
-            currentIndex = getNext(currentIndex, offset: 2)
-        } else {
-            currentIndex = getNext(currentIndex, offset: 3)
+        // MARK: 做了一些化简，原始逻辑参考Git提交记录
+        for i in 1...5 {
+            if scrollView.contentOffset.y < CGFloat(i) * itemH {
+                if i != 3 {
+                    currentIndex = getNext(currentIndex, offset: i - 3)
+                }
+                break
+            } else if i == 5 {
+                currentIndex = getNext(currentIndex, offset: 3)
+            }
         }
+
     }
     
     // 获取下一条(或N条)标签
@@ -230,16 +208,7 @@ class VerticalCycleView: UIView, UIScrollViewDelegate {
         if (count < 1) {
             return 0
         }
-        return (current + offset) % numberOfItem
-    }
-    
-    // 获取上一条(或N条)标签
-    fileprivate func getLast(_ current: Int, offset: Int = 1) -> Int {
-        let count = numberOfItem - 1
-        if (count < 1) {
-            return 0
-        }
-        return (numberOfItem + (current - offset) % numberOfItem) % numberOfItem
+        return (numberOfItem + (current + offset) % numberOfItem) % numberOfItem
     }
     
     required init?(coder aDecoder: NSCoder) {
