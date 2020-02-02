@@ -35,10 +35,15 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
     
     fileprivate var scrollView: UIScrollView!
     
+    fileprivate var pageControl: MPageControl!
+    
     fileprivate weak var delegate: CycleScrollViewDelegate?
     
     // 图片数组
     fileprivate var imageViews: [UIImageView] = []
+    
+    // 图片阴影数组
+    fileprivate var shadowViews: [UIView] = []
     
     // 图片个数
     fileprivate var imageCount: Int = 0
@@ -54,7 +59,7 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
     }
     
     // 滚动间隔
-    public var rollingTime: TimeInterval = 5.0
+    public var rollingTime: TimeInterval = 4.0
     
     // 是否滚动
     public var rollingEnable: Bool = false {
@@ -70,24 +75,11 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
     }
     
     // 初始化
-    public convenience init(frame: CGRect, delegate: CycleScrollViewDelegate) {
-        self.init(frame: frame)
-        self.delegate = delegate
-        imageCount = delegate.cycleImageCount()
-        scrollView.isScrollEnabled = imageCount > 1
-    }
-    
-    // 初始化
-    public convenience init(delegate: CycleScrollViewDelegate) {
-        self.init(frame: .zero)
-        self.delegate = delegate
-        imageCount = delegate.cycleImageCount()
-        scrollView.isScrollEnabled = imageCount > 1
-    }
-    
-    // 初始化
-    fileprivate override init(frame: CGRect) {
+    init(frame: CGRect, delegate: CycleScrollViewDelegate) {
         super.init(frame: frame)
+        
+        self.delegate = delegate
+        imageCount = delegate.cycleImageCount()
         
         scrollView = UIScrollView()
         scrollView.isPagingEnabled = true
@@ -95,32 +87,50 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.delegate = self
+        scrollView.isScrollEnabled = imageCount > 1
         addSubview(scrollView)
+        
+        pageControl = MPageControl(frame: CGRect(x: 0, y: frame.height - 50, width: frame.width, height: 50), numberOfPages: imageCount)
+        pageControl.currentPage = 0
+        pageControl.currentWidthMultiple = 2.5
+        pageControl.currentColor = .blue
+        pageControl.otherColor = .gray
+        pageControl.pointSize = CGSize(width: 14, height: 8)
+        pageControl.setClickAction { (index) in
+            self.pageChanged(index!)
+        }
+        addSubview(pageControl)
         
         for _ in 0..<3 {
             let imageView = UIImageView()
-            scrollView.addSubview(imageView)
+            let shadowView = UIView()
+            imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction(_:))))
+            shadowView.addSubview(imageView)
+            scrollView.addSubview(shadowView)
+            shadowViews.append(shadowView)
             imageViews.append(imageView)
         }
         
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction(_:))))
     }
     
     // 设置初始布局
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        scrollView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-        scrollView.contentSize = CGSize(width: frame.width * 3, height: frame.height)
+        scrollView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width / 2)
+        scrollView.contentSize = CGSize(width: frame.width * 3, height: frame.width / 2)
         
-        // 原代码不可用，替换注释掉
-//        imageViews.forEach {
-//            $0.frame = CGRect(x: CGFloat($1) * frame.width, y: 0, width: frame.width, height: frame.height)
-//        }
-        var i = 0
-        for img in imageViews {
-            img.frame = CGRect(x: CGFloat(i) * frame.width, y: 0, width: frame.width, height: frame.height)
-            i += 1
+        for i in 0..<3 {
+            shadowViews[i].frame = CGRect(x: 10 + CGFloat(i) * frame.width, y: 0, width: frame.width - 20, height: (frame.width - 20) / 3)
+            shadowViews[i].layer.cornerRadius = 10
+            shadowViews[i].layer.shadowColor = UIColor.lightGray.cgColor
+            shadowViews[i].layer.shadowRadius = 10
+            shadowViews[i].layer.shadowOffset = CGSize(width: 0, height: 10)
+            shadowViews[i].layer.shadowOpacity = 0.8
+            
+            imageViews[i].frame = CGRect(x: 0, y: 0, width: frame.width - 20, height: (frame.width - 20) / 3)
+            imageViews[i].layer.cornerRadius = 10
+            imageViews[i].layer.masksToBounds = true
         }
         
         updateImage()
@@ -132,6 +142,14 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
         delegate?.cycleImageView(imageViews[1], index: currentPage)
         delegate?.cycleImageView(imageViews[2], index: getNext(currentPage))
         scrollView.contentOffset.x = frame.width
+    }
+    
+    func pageChanged(_ index: Int) {
+        stopTimer()
+        pageControl.currentPage = index
+        currentPage = index
+        updateImage()
+        startTimer()
     }
     
     // 使用手势处理点击事件
@@ -183,6 +201,7 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
         } else if scrollView.contentOffset.x >= 2 * scrollView.frame.width {
             currentPage = getNext(currentPage)
         }
+        pageControl.currentPage = currentPage
     }
     
     // 获取下一页页码

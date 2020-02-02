@@ -53,6 +53,8 @@
 		A28484CF23C0C4C600B7C3E1 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */; };
 		A28484D323C0E0BB00B7C3E1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484D223C0E0BB00B7C3E1 /* Video.swift */; };
 		A28484D523C0E4FB00B7C3E1 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */; };
+		A29DAC9523E683350018BA98 /* MPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DAC9423E683350018BA98 /* MPageControl.swift */; };
+		A29DD60E23E5C24C00BA23BE /* HomeNewsCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DD60D23E5C24C00BA23BE /* HomeNewsCell2.swift */; };
 		A2A4631F23C9F37F00911C36 /* PlaybillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4631E23C9F37F00911C36 /* PlaybillCell.swift */; };
 		A2A4632123CA104F00911C36 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4632023CA104F00911C36 /* UserDefaultsExt.swift */; };
 		A2C15C4C23B71BD80096D80D /* SearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */; };
@@ -152,6 +154,8 @@
 		A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
 		A28484D223C0E0BB00B7C3E1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
+		A29DAC9423E683350018BA98 /* MPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPageControl.swift; sourceTree = "<group>"; };
+		A29DD60D23E5C24C00BA23BE /* HomeNewsCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsCell2.swift; sourceTree = "<group>"; };
 		A2A4631E23C9F37F00911C36 /* PlaybillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybillCell.swift; sourceTree = "<group>"; };
 		A2A4632023CA104F00911C36 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 		A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionCell.swift; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A248174123AA82CD00CF3B9C /* HomeNewsCell.swift */,
+				A29DD60D23E5C24C00BA23BE /* HomeNewsCell2.swift */,
 			);
 			path = news;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				A233609923C603EB00D68D46 /* EWTextField.swift */,
 				A25FE6FF23CDE22B0014E1C2 /* WebController.swift */,
 				A275872323E2C64400BBEC21 /* VerticalCycleView.swift */,
+				A29DAC9423E683350018BA98 /* MPageControl.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				A2EAB94523C860B7001899A5 /* LogoutCell.swift in Sources */,
 				A2EAB93323C829D2001899A5 /* ThemeBarStylePicker.swift in Sources */,
 				A25E9EA423ACE14800EEE779 /* OrderController.swift in Sources */,
+				A29DAC9523E683350018BA98 /* MPageControl.swift in Sources */,
 				A248174223AA82CD00CF3B9C /* HomeNewsCell.swift in Sources */,
 				A248173223A9E8B900CF3B9C /* SettingController.swift in Sources */,
 				A2EAB93F23C82B5C001899A5 /* MyThemes.swift in Sources */,
@@ -590,6 +597,7 @@
 				A233609A23C603EB00D68D46 /* EWTextField.swift in Sources */,
 				A27B610123AB75BE00B73AAF /* HomeFunctionCell.swift in Sources */,
 				A2C15C5623B733F00096D80D /* SearchController.swift in Sources */,
+				A29DD60E23E5C24C00BA23BE /* HomeNewsCell2.swift in Sources */,
 				A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */,
 				A2688CB223CB50DC00D1C4E0 /* DropBoxTextField.swift in Sources */,
 				A2766C4323C367900037E1BF /* AddressCell.swift in Sources */,
