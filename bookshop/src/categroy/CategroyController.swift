@@ -53,7 +53,9 @@ class CategoryController: UIViewController, UITableViewDelegate, UITableViewData
     
     /// MARK: View布局
     override func viewDidLayoutSubviews() {
-        leftTableView.frame = CGRect(x: 0, y: 0, width: CategoryCell.CELL_WIDTH, height: SCREEN_HEIGHT)
+        let h = SCREEN_HEIGHT - (tabBarController?.tabBar.frame.height)! - (navigationController?.navigationBar.frame.height)!
+        
+        leftTableView.frame = CGRect(x: 0, y: 0, width: CategoryCell.CELL_WIDTH, height: h)
         leftTableView.separatorStyle = .none
         leftTableView.showsVerticalScrollIndicator = false
         leftTableView.showsHorizontalScrollIndicator = false
@@ -62,7 +64,7 @@ class CategoryController: UIViewController, UITableViewDelegate, UITableViewData
         
         rightTableView.frame = CGRect(x: CategoryCell.CELL_WIDTH, y: 0,
                                       width: SCREEN_WIDTH - CategoryCell.CELL_WIDTH,
-                                      height: SCREEN_HEIGHT)
+                                      height: h)
         rightTableView.separatorStyle = .none
         rightTableView.showsVerticalScrollIndicator = false
         rightTableView.showsHorizontalScrollIndicator = false
