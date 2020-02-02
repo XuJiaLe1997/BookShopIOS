@@ -46,6 +46,7 @@ class DropBoxMenu: DropBoxView {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        drawUp()
         return dropBoxDelegate.didSelectItemAt(indexPath.row)
     }
     

@@ -73,6 +73,9 @@ class UserController: UITableViewController {
         } else {
             let vc = WebController()
             let navVC = UINavigationController(rootViewController: vc)
+            let img = UIImageView(image: UIImage(named: "indevelopment"))
+            vc.view.addSubview(img)
+            img.frame = CGRect(x: SCREEN_WIDTH / 4, y: SCREEN_WIDTH / 4, width: SCREEN_WIDTH / 2, height: SCREEN_WIDTH / 2)
             present(navVC, animated: true, completion: nil)
         }
     }

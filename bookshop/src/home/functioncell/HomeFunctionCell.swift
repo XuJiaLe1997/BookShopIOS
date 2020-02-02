@@ -11,7 +11,6 @@ import UIKit
 
 class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let ScreenWidth  = UIScreen.main.bounds.width
     let numberOfFunction = 4
     var controller: UIViewController?
     
@@ -23,7 +22,7 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
         // 最小列间距
         layout.minimumInteritemSpacing = 5
         // item平分(减去间距后的)屏幕宽度，但不应小于60，否则允许水平滑动
-        var w = (ScreenWidth - layout.minimumInteritemSpacing * CGFloat(numberOfFunction - 1))/CGFloat(numberOfFunction)
+        var w = (SCREEN_WIDTH - layout.minimumInteritemSpacing * CGFloat(numberOfFunction - 1))/CGFloat(numberOfFunction)
         if(w < 60) {
             w = 60
             layout.scrollDirection = .horizontal
@@ -31,7 +30,7 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
         layout.itemSize = CGSize(width: w, height: 100)
         
         
-        let collectionView = UICollectionView.init(frame: CGRect(x:0, y:0, width: ScreenWidth, height:100), collectionViewLayout: layout)
+        let collectionView = UICollectionView.init(frame: CGRect(x:0, y:0, width: SCREEN_WIDTH, height:100), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -76,6 +75,9 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
         default:
             let vc = WebController()
             let navVC = UINavigationController(rootViewController: vc)
+            let img = UIImageView(image: UIImage(named: "indevelopment"))
+            vc.view.addSubview(img)
+            img.frame = CGRect(x: SCREEN_WIDTH / 4, y: SCREEN_WIDTH / 4, width: SCREEN_WIDTH / 2, height: SCREEN_WIDTH / 2)
             controller?.present(navVC, animated: true, completion: nil)
         }
     }

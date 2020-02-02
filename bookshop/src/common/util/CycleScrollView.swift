@@ -105,6 +105,7 @@ class CycleScrollView: UIView, UIScrollViewDelegate {
             let imageView = UIImageView()
             let shadowView = UIView()
             imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction(_:))))
+            imageView.isUserInteractionEnabled = true
             shadowView.addSubview(imageView)
             scrollView.addSubview(shadowView)
             shadowViews.append(shadowView)
