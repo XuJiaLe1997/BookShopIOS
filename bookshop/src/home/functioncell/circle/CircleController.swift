@@ -17,11 +17,16 @@ class CircleController: UICollectionViewController, WaterFallDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backBtn = UIBarButtonItem(image: ImageUtil.resize(image: UIImage(named: "back")!, size: CGSize(width: 20, height: 20)),
+                                      style: .plain, target: self, action: #selector(back))
+        navigationItem.setLeftBarButton(backBtn, animated: true)
+        navigationItem.title = "圈子"
+        
         let playbill = UIImageView(image: UIImage(named: "video_playbill"))
-        playbill.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.width*2/3)
+        playbill.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 2 / 3)
         
         //创建瀑布流视图布局类
-        layout = WaterFallLayout(delegate: self, yOffset: collectionView.frame.width*2/3)
+        layout = WaterFallLayout(delegate: self, yOffset: SCREEN_WIDTH * 2 / 3)
         layout.minimumInteritemSpacing = 5
         //创建集合视图
         collectionView.collectionViewLayout = layout
@@ -77,6 +82,10 @@ class CircleController: UICollectionViewController, WaterFallDelegate {
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         self.present(playerViewController, animated:true, completion: nil)
+    }
+    
+    @objc func back() {
+        dismiss(animated: true, completion: nil)
     }
  
 }

@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class CategoryCollectionCell: FunctionCollectionCell {
+class CircleCollectionCell: FunctionCollectionCell {
     
     override func getTitle() -> String? {
-        return "分类"
+        return "圈子"
     }
     
     override func getIconImg() -> UIImage? {
-        return UIImage(named: "fenlei")
+        return UIImage(named: "earth")
     }
 }

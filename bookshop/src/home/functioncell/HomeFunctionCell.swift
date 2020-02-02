@@ -37,7 +37,7 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
         self.addSubview(collectionView)
         
         collectionView.register(GoodCollectionCell.classForCoder(), forCellWithReuseIdentifier: "goodCollectionCell")
-        collectionView.register(CategoryCollectionCell.classForCoder(), forCellWithReuseIdentifier: "categoryCollectionCell")
+        collectionView.register(CircleCollectionCell.classForCoder(), forCellWithReuseIdentifier: "circleCollectionCell")
         collectionView.register(ActivityCollectionCell.classForCoder(), forCellWithReuseIdentifier: "activityCollectionCell")
         collectionView.register(SearchCollectionCell.classForCoder(), forCellWithReuseIdentifier: "searchCollectionCell")
     }
@@ -58,7 +58,7 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
                 withReuseIdentifier: "goodCollectionCell", for: indexPath) as! GoodCollectionCell
         case 1:
             return collectionView.dequeueReusableCell(
-                withReuseIdentifier: "categoryCollectionCell", for: indexPath) as! CategoryCollectionCell
+                withReuseIdentifier: "circleCollectionCell", for: indexPath) as! CircleCollectionCell
         case 2:
             return collectionView.dequeueReusableCell(
                 withReuseIdentifier: "activityCollectionCell", for: indexPath) as! ActivityCollectionCell
@@ -70,6 +70,10 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 1:
+            let vc = CircleController(collectionViewLayout: UICollectionViewLayout())
+            let navVC = UINavigationController(rootViewController: vc)
+            controller?.present(navVC, animated: true, completion: nil)
         case 3:
             controller?.performSegue(withIdentifier: "searchSegue", sender: nil)
         default:

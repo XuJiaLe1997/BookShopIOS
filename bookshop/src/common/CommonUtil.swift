@@ -160,6 +160,15 @@ class CommonUtil {
         return Response()
     }
     
+    static func getBooksListByCategroy(_ categroy: String) -> [Book]{
+        switch categroy {
+        case "精选":
+            return bookList
+        default:
+            return []
+        }
+    }
+    
     /* ======= end ======== */
     
     /* ======= 发现和视频接口 begin ====== */
