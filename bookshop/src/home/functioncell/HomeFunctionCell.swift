@@ -74,7 +74,9 @@ class HomeFunctionCell: UITableViewCell, UICollectionViewDataSource, UICollectio
         case 3:
             controller?.performSegue(withIdentifier: "searchSegue", sender: nil)
         default:
-            CBToast.showToastAction(message: "功能尚未开放")
+            let vc = WebController()
+            let navVC = UINavigationController(rootViewController: vc)
+            controller?.present(navVC, animated: true, completion: nil)
         }
     }
     

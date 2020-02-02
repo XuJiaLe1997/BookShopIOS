@@ -52,13 +52,15 @@ class WebController: UIViewController, DropBoxDelegate {
         load(path)
     }
     
-    func load(_ path: String) {
-        let url = URL(fileURLWithPath: path)
+    func load(_ path: String?) {
+        if (path == nil) {
+            return
+        }
+        let url = URL(fileURLWithPath: path!)
         webView.load(URLRequest(url: url))
     }
     
     @objc func back() {
-        print("退出")
         dismiss(animated: true, completion: nil)
     }
     

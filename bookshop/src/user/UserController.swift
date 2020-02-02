@@ -70,6 +70,10 @@ class UserController: UITableViewController {
             } else if (indexPath.row == 1){     // 打开个人资料
                 self.performSegue(withIdentifier: "userInfoSegue", sender: nil)
             }
+        } else {
+            let vc = WebController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true, completion: nil)
         }
     }
     
