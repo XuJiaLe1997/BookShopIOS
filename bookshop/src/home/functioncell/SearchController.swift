@@ -63,6 +63,13 @@ class SearchController: UITableViewController, UISearchResultsUpdating{
         return bookCell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = BookDetailController()
+        vc.book = resultList[indexPath.row]
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -70,16 +77,4 @@ class SearchController: UITableViewController, UISearchResultsUpdating{
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "bookDetail2"{
-            let destination: BookDetailController = segue.destination as! BookDetailController
-            if let selectedCell = sender as? UITableViewCell{
-                let indexPath = tableView.indexPath(for:selectedCell)!
-                let selectedBook = resultList[(indexPath as NSIndexPath).row]
-                destination.book = selectedBook
-            }
-        }
-    }
-    
 }

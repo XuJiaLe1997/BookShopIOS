@@ -103,6 +103,15 @@ class HomeController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 3) {
+            let vc = BookDetailController()
+            vc.book = CommonUtil.getBookList()[indexPath.row]
+            let nav = UINavigationController(rootViewController: vc)
+            present(nav, animated: true, completion: nil)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -115,17 +124,6 @@ class HomeController: UITableViewController {
             return CGFloat(100)
         default:
             return CGFloat(0)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "bookDetail"{
-            let destination: BookDetailController = segue.destination as! BookDetailController
-            if let selectedCell = sender as? UITableViewCell{
-                let indexPath = tableView.indexPath(for:selectedCell)!
-                let selectedBook = CommonUtil.getBookList()[(indexPath as NSIndexPath).row]
-                destination.book = selectedBook
-            }
         }
     }
 }

@@ -120,7 +120,10 @@ class CategoryController: UIViewController, UITableViewDelegate, UITableViewData
             rightTableItems = CommonUtil.getBooksListByCategroy(leftTableItems[indexPath.row])
             setRightTable()
         } else {
-            // TODO 书籍详情页
+            let vc = BookDetailController()
+            vc.book = rightTableItems[indexPath.row]
+            let nav = UINavigationController(rootViewController: vc)
+            present(nav, animated: true, completion: nil)
         }
     }
     
@@ -169,7 +172,7 @@ class CategoryCell: UITableViewCell {
     
 }
 
-/// MARK: 书籍详情
+/// MARK: 书籍条目
 class BookDetailCell: UITableViewCell {
     
     static let CELL_HEIGHT = CGFloat(100)
@@ -188,6 +191,7 @@ class BookDetailCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
+        selectionStyle = .none
         titleLabel.frame = CGRect(x: 100, y: 20, width: frame.width - 100, height: 40)
         coverImageView.frame = CGRect(x: 10, y: 10, width: 80, height: 80)
     }

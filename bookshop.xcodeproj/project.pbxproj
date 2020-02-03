@@ -17,6 +17,7 @@
 		A20E7BA023A8B9950009F2C9 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */; };
 		A20E7BA223A8BD8D0009F2C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7BA123A8BD8D0009F2C9 /* User.swift */; };
 		A20E7BA423A8C04A0009F2C9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E7BA323A8C04A0009F2C9 /* UserController.swift */; };
+		A2215D2923E7DB5C00DC59D1 /* BookCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2215D2823E7DB5C00DC59D1 /* BookCommentCell.swift */; };
 		A233609823C5FAA100D68D46 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A233609723C5FAA100D68D46 /* ColorUtil.swift */; };
 		A233609A23C603EB00D68D46 /* EWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A233609923C603EB00D68D46 /* EWTextField.swift */; };
 		A246AD1423CDA64B009321FF /* Yellow.plist in Resources */ = {isa = PBXBuildFile; fileRef = A246AD1123CDA64A009321FF /* Yellow.plist */; };
@@ -37,7 +38,7 @@
 		A25E9EA223ACAE3600EEE779 /* ShoppingCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA123ACAE3600EEE779 /* ShoppingCarCell.swift */; };
 		A25E9EA423ACE14800EEE779 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA323ACE14800EEE779 /* OrderController.swift */; };
 		A25E9EA623AD044C00EEE779 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */; };
-		A25E9EA823AD155900EEE779 /* BookInfo2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */; };
+		A25E9EA823AD155900EEE779 /* BookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E9EA723AD155900EEE779 /* BookInfoCell.swift */; };
 		A25FE70023CDE22B0014E1C2 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25FE6FF23CDE22B0014E1C2 /* WebController.swift */; };
 		A2688CB223CB50DC00D1C4E0 /* DropBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */; };
 		A2688CB323CB50DC00D1C4E0 /* DropBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2688CB123CB50DC00D1C4E0 /* DropBox.swift */; };
@@ -47,7 +48,7 @@
 		A27B60FF23AB125600B73AAF /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B60FE23AB125600B73AAF /* CycleScrollView.swift */; };
 		A27B610123AB75BE00B73AAF /* HomeFunctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B610023AB75BE00B73AAF /* HomeFunctionCell.swift */; };
 		A27B610623ABC68A00B73AAF /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B610523ABC68A00B73AAF /* BookDetailController.swift */; };
-		A27B610823ABC6C200B73AAF /* BookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B610723ABC6C200B73AAF /* BookInfoCell.swift */; };
+		A27B610823ABC6C200B73AAF /* BookDescCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27B610723ABC6C200B73AAF /* BookDescCell.swift */; };
 		A28484CA23C0BA3900B7C3E1 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */; };
 		A28484CD23C0C47D00B7C3E1 /* CircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484CC23C0C47D00B7C3E1 /* CircleController.swift */; };
 		A28484CF23C0C4C600B7C3E1 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */; };
@@ -119,6 +120,7 @@
 		A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		A20E7BA123A8BD8D0009F2C9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A20E7BA323A8C04A0009F2C9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		A2215D2823E7DB5C00DC59D1 /* BookCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCommentCell.swift; sourceTree = "<group>"; };
 		A233609723C5FAA100D68D46 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		A233609923C603EB00D68D46 /* EWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWTextField.swift; sourceTree = "<group>"; };
 		A246AD1123CDA64A009321FF /* Yellow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Yellow.plist; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		A25E9EA123ACAE3600EEE779 /* ShoppingCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCarCell.swift; sourceTree = "<group>"; };
 		A25E9EA323ACE14800EEE779 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo2Cell.swift; sourceTree = "<group>"; };
+		A25E9EA723AD155900EEE779 /* BookInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
 		A25FE6FF23CDE22B0014E1C2 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		A2688CB023CB50DC00D1C4E0 /* DropBoxTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxTextField.swift; sourceTree = "<group>"; };
 		A2688CB123CB50DC00D1C4E0 /* DropBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBox.swift; sourceTree = "<group>"; };
@@ -149,7 +151,7 @@
 		A27B60FE23AB125600B73AAF /* CycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
 		A27B610023AB75BE00B73AAF /* HomeFunctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFunctionCell.swift; sourceTree = "<group>"; };
 		A27B610523ABC68A00B73AAF /* BookDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
-		A27B610723ABC6C200B73AAF /* BookInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
+		A27B610723ABC6C200B73AAF /* BookDescCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescCell.swift; sourceTree = "<group>"; };
 		A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		A28484CC23C0C47D00B7C3E1 /* CircleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleController.swift; sourceTree = "<group>"; };
 		A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
@@ -351,8 +353,9 @@
 			isa = PBXGroup;
 			children = (
 				A27B610523ABC68A00B73AAF /* BookDetailController.swift */,
-				A27B610723ABC6C200B73AAF /* BookInfoCell.swift */,
-				A25E9EA723AD155900EEE779 /* BookInfo2Cell.swift */,
+				A27B610723ABC6C200B73AAF /* BookDescCell.swift */,
+				A25E9EA723AD155900EEE779 /* BookInfoCell.swift */,
+				A2215D2823E7DB5C00DC59D1 /* BookCommentCell.swift */,
 			);
 			path = bookDetail;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				A2EAB92D23C829D2001899A5 /* ThemeManager+Index.swift in Sources */,
 				A2EAB92723C829D2001899A5 /* ThemeFontPicker.swift in Sources */,
 				A248173E23AA691B00CF3B9C /* RegisterController.swift in Sources */,
+				A2215D2923E7DB5C00DC59D1 /* BookCommentCell.swift in Sources */,
 				A248173A23A9F5FA00CF3B9C /* Book.swift in Sources */,
 				A2A4632123CA104F00911C36 /* UserDefaultsExt.swift in Sources */,
 				A2766C4123C353780037E1BF /* AddressController.swift in Sources */,
@@ -623,7 +627,7 @@
 				A2EAB92023C829D2001899A5 /* ThemeVisualEffectPicker.swift in Sources */,
 				A2C15C4E23B7282D0096D80D /* FunctionCollectionCell.swift in Sources */,
 				A248173423A9E98400CF3B9C /* CheckUpdateController.swift in Sources */,
-				A27B610823ABC6C200B73AAF /* BookInfoCell.swift in Sources */,
+				A27B610823ABC6C200B73AAF /* BookDescCell.swift in Sources */,
 				A2EF593223B630B4007D677C /* UserInfoController.swift in Sources */,
 				A248173823A9EF8300CF3B9C /* Config.swift in Sources */,
 				A2EAB91D23C829D2001899A5 /* ThemeNavigationBarAppearancePicker.swift in Sources */,
@@ -633,7 +637,7 @@
 				A20E7B8623A8B52A0009F2C9 /* AppDelegate.swift in Sources */,
 				A2EAB91F23C829D2001899A5 /* ThemeCGFloatPicker.swift in Sources */,
 				A25E9EA023ACADE100EEE779 /* ShoppingCarController.swift in Sources */,
-				A25E9EA823AD155900EEE779 /* BookInfo2Cell.swift in Sources */,
+				A25E9EA823AD155900EEE779 /* BookInfoCell.swift in Sources */,
 				A28484D523C0E4FB00B7C3E1 /* WaterFallLayout.swift in Sources */,
 				A275872423E2C64400BBEC21 /* VerticalCycleView.swift in Sources */,
 				A2EAB94123C85F6C001899A5 /* CheckUpdateCell.swift in Sources */,
