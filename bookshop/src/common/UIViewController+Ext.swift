@@ -32,8 +32,6 @@ extension UIViewController {
             backgroundView.layer.borderWidth = 0.3
             backgroundView.layer.borderColor = UIColor.lightGray.cgColor
             view.addSubview(backgroundView)
-            // 保持在最顶层
-            view.bringSubviewToFront(backgroundView)
             // extension不能直接添加存储属性
             objc_setAssociatedObject(self, &navigationBarBackgroundKey, backgroundView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -41,8 +39,12 @@ extension UIViewController {
     
     // 调用此方法修改导航栏透明度
     func setNavBarBackgroundColorAlpha(alpha:CGFloat) {
-        let backGroundView = objc_getAssociatedObject(self, &navigationBarBackgroundKey) as? UIView
-        backGroundView?.alpha = alpha
+        let backgroundView = objc_getAssociatedObject(self, &navigationBarBackgroundKey) as? UIView
+        if(backgroundView != nil) {
+            backgroundView?.alpha = alpha
+            // 保持在最顶层
+            view.bringSubviewToFront(backgroundView!)
+        }
     }
     
 }
