@@ -9,17 +9,23 @@
 import Foundation
 import UIKit
 
-class BookDetailController: UITableViewController {
+class BookDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var book: Book?
     var comments: [String] = []
+    var tableView: UITableView!
     
     fileprivate var addShoppingCarBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView = UITableView(frame: view.frame)
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .singleLine
+        view.addSubview(tableView)
         
         let backBtn = UIBarButtonItem(image: ImageUtil.resize(image: UIImage(named: "back")!, size: CGSize(width: 20, height: 20)),
                                       style: .plain, target: self, action: #selector(back))
@@ -28,22 +34,12 @@ class BookDetailController: UITableViewController {
         addShoppingCarBtn = UIBarButtonItem(title: "加入购物车", style: .plain, target: self, action: #selector(addShoppingCar))
         navigationItem.setRightBarButton(addShoppingCarBtn, animated: true)
         
-        tableView.backgroundView = UIView()
+        setNavBarBackgroundColor(color: .white)
         
         tableView.register(BookInfoCell.classForCoder(), forCellReuseIdentifier: "bookInfoCell")
         tableView.register(BookDescCell.classForCoder(), forCellReuseIdentifier: "bookDescCell")
         tableView.register(BookCommentCell.classForCoder(), forCellReuseIdentifier: "bookCommentCell")
-    }
-    
-    override func viewDidLayoutSubviews() {
         
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        
-        tableView.separatorStyle = .singleLine
-                
         for b in CommonUtil.getShoppingCar() {
             if(b.id == book?.id) {
                 addShoppingCarBtn.isEnabled = false
@@ -52,15 +48,15 @@ class BookDetailController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? 2 : (comments.count == 0 ? 1 : comments.count)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.section == 0) {
             if (indexPath.row == 0) {
                 let bookInfoCell = tableView.dequeueReusableCell(withIdentifier: "bookInfoCell", for: indexPath) as! BookInfoCell
@@ -76,7 +72,7 @@ class BookDetailController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0) {
             if (indexPath.row == 0) {
                 return BookInfoCell.CELL_HEIGHT
@@ -88,11 +84,11 @@ class BookDetailController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 50
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 1) {
             let v = UIView()
             v.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50)
@@ -104,6 +100,16 @@ class BookDetailController: UITableViewController {
             return v
         }
         return nil
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let maxAlphaOffset = CGFloat(30)
+        let minAlphaOffset = -(STATUS_BAR_HEIGHT + (navigationController?.navigationBar.frame.height)!)
+        let offset = scrollView.contentOffset.y
+        // 按比例计算alpha，且取值在 [0,1]
+        let a = max(min((offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset), 1), 0)
+        setNavBarBackgroundColorAlpha(alpha: a)
+        navigationController?.navigationBar.tintColor = ColorUtil.use255Color(red: (1 - a) * 255, green: (1 - a) * 255, blue: (1 - a) * 255, alpha: 1)
     }
     
     @objc func addShoppingCar() {

@@ -24,6 +24,7 @@
 		A246AD1523CDA64B009321FF /* Blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = A246AD1223CDA64A009321FF /* Blue.plist */; };
 		A246AD1623CDA64B009321FF /* Green.plist in Resources */ = {isa = PBXBuildFile; fileRef = A246AD1323CDA64A009321FF /* Green.plist */; };
 		A246AD1823CDAA5F009321FF /* ThemeSwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */; };
+		A247436223E959E5006109D3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A247436123E959E5006109D3 /* UIViewController+Ext.swift */; };
 		A248173223A9E8B900CF3B9C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173123A9E8B900CF3B9C /* SettingController.swift */; };
 		A248173423A9E98400CF3B9C /* CheckUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173323A9E98400CF3B9C /* CheckUpdateController.swift */; };
 		A248173823A9EF8300CF3B9C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248173723A9EF8300CF3B9C /* Config.swift */; };
@@ -127,6 +128,7 @@
 		A246AD1223CDA64A009321FF /* Blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Blue.plist; sourceTree = "<group>"; };
 		A246AD1323CDA64A009321FF /* Green.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Green.plist; sourceTree = "<group>"; };
 		A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitchController.swift; sourceTree = "<group>"; };
+		A247436123E959E5006109D3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		A248173123A9E8B900CF3B9C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A248173323A9E98400CF3B9C /* CheckUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateController.swift; sourceTree = "<group>"; };
 		A248173723A9EF8300CF3B9C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				A2C15C4A23B718A40096D80D /* util */,
 				A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */,
 				A2EAB93E23C82B5C001899A5 /* MyThemes.swift */,
+				A247436123E959E5006109D3 /* UIViewController+Ext.swift */,
 				A20E7BA123A8BD8D0009F2C9 /* User.swift */,
 				A248173923A9F5FA00CF3B9C /* Book.swift */,
 				A28484D223C0E0BB00B7C3E1 /* Video.swift */,
@@ -634,6 +637,7 @@
 				A2EAB92F23C829D2001899A5 /* ThemeScrollViewIndicatorStylePicker.swift in Sources */,
 				A2EAB92A23C829D2001899A5 /* UIKit+Theme.swift in Sources */,
 				A2EAB93423C829D2001899A5 /* UIRefreshControl+TitleAttributes.swift in Sources */,
+				A247436223E959E5006109D3 /* UIViewController+Ext.swift in Sources */,
 				A20E7B8623A8B52A0009F2C9 /* AppDelegate.swift in Sources */,
 				A2EAB91F23C829D2001899A5 /* ThemeCGFloatPicker.swift in Sources */,
 				A25E9EA023ACADE100EEE779 /* ShoppingCarController.swift in Sources */,

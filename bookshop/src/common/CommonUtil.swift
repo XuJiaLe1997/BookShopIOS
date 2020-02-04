@@ -11,6 +11,7 @@ import UIKit
 
 let SCREEN_WIDTH = UIScreen.main.bounds.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.height
+let STATUS_BAR_HEIGHT = UIApplication.shared.statusBarFrame.height
 
 class CommonUtil {
     
