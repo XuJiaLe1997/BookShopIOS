@@ -242,9 +242,9 @@
 		A20E7B8423A8B52A0009F2C9 /* bookshop */ = {
 			isa = PBXGroup;
 			children = (
+				A20E7B9E23A8B6C30009F2C9 /* common */,
 				A2EAB93623C82A24001899A5 /* resources */,
-				A20E7B9723A8B5980009F2C9 /* src */,
-				A20E7B8523A8B52A0009F2C9 /* AppDelegate.swift */,
+				A20E7B9723A8B5980009F2C9 /* pages */,
 				A20E7B8923A8B52A0009F2C9 /* Main.storyboard */,
 				A20E7B8C23A8B5300009F2C9 /* Assets.xcassets */,
 				A20E7B8E23A8B5300009F2C9 /* LaunchScreen.storyboard */,
@@ -253,106 +253,100 @@
 			path = bookshop;
 			sourceTree = "<group>";
 		};
-		A20E7B9723A8B5980009F2C9 /* src */ = {
+		A20E7B9723A8B5980009F2C9 /* pages */ = {
 			isa = PBXGroup;
 			children = (
-				A29DAC9823E6D2AC0018BA98 /* categroy */,
-				A20E7B9E23A8B6C30009F2C9 /* common */,
-				A20E7B9C23A8B6690009F2C9 /* shoppingcar */,
-				A20E7B9B23A8B6600009F2C9 /* user */,
-				A20E7B9A23A8B61B0009F2C9 /* home */,
+				A29DAC9823E6D2AC0018BA98 /* categroy(分类) */,
+				A20E7B9C23A8B6690009F2C9 /* shoppingcar(购物车) */,
+				A20E7B9B23A8B6600009F2C9 /* user(个人中心) */,
+				A20E7B9A23A8B61B0009F2C9 /* home(主页) */,
 				A248173723A9EF8300CF3B9C /* Config.swift */,
 				A25E9EA523AD044C00EEE779 /* MainTabBarController.swift */,
+				A20E7B8523A8B52A0009F2C9 /* AppDelegate.swift */,
 			);
-			path = src;
+			path = pages;
 			sourceTree = "<group>";
 		};
-		A20E7B9A23A8B61B0009F2C9 /* home */ = {
+		A20E7B9A23A8B61B0009F2C9 /* home(主页) */ = {
 			isa = PBXGroup;
 			children = (
-				A25FE6FE23CDE1B90014E1C2 /* news */,
-				A2C15C4923B70E260096D80D /* functioncell */,
-				A27B610223ABC65900B73AAF /* bookDetail */,
+				A2DB258D23EBD90800553701 /* view */,
+				A25FE6FE23CDE1B90014E1C2 /* 活动推送 */,
+				A2C15C4923B70E260096D80D /* 更多功能 */,
+				A27B610223ABC65900B73AAF /* 书籍详情 */,
 				A248173F23AA826600CF3B9C /* HomeController.swift */,
-				A248174323AA831D00CF3B9C /* HomeBookCell.swift */,
 			);
-			path = home;
+			path = "home(主页)";
 			sourceTree = "<group>";
 		};
-		A20E7B9B23A8B6600009F2C9 /* user */ = {
+		A20E7B9B23A8B6600009F2C9 /* user(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
-				A2766C3F23C350480037E1BF /* address */,
-				A2EF593323B631E9007D677C /* userinfo */,
-				A248173023A9E89900CF3B9C /* setting */,
+				A2DB259023EBD92E00553701 /* view */,
+				A2DB258F23EBD92600553701 /* 注册 */,
+				A2DB258E23EBD91A00553701 /* 登录 */,
+				A2766C3F23C350480037E1BF /* 地址 */,
+				A2EF593323B631E9007D677C /* 详细信息 */,
+				A248173023A9E89900CF3B9C /* 设置 */,
 				A20E7BA323A8C04A0009F2C9 /* UserController.swift */,
-				A248173B23AA1BE200CF3B9C /* LoginController.swift */,
-				A248173D23AA691B00CF3B9C /* RegisterController.swift */,
-				A2EAB94823C87EF6001899A5 /* UserHeadCell.swift */,
 			);
-			path = user;
+			path = "user(个人中心)";
 			sourceTree = "<group>";
 		};
-		A20E7B9C23A8B6690009F2C9 /* shoppingcar */ = {
+		A20E7B9C23A8B6690009F2C9 /* shoppingcar(购物车) */ = {
 			isa = PBXGroup;
 			children = (
+				A2DB258A23EBD80D00553701 /* 订单结算 */,
+				A2DB258923EBD80300553701 /* view */,
 				A25E9E9F23ACADE100EEE779 /* ShoppingCarController.swift */,
-				A25E9EA123ACAE3600EEE779 /* ShoppingCarCell.swift */,
-				A25E9EA323ACE14800EEE779 /* OrderController.swift */,
 			);
-			path = shoppingcar;
+			path = "shoppingcar(购物车)";
 			sourceTree = "<group>";
 		};
 		A20E7B9E23A8B6C30009F2C9 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				A2DB258C23EBD86F00553701 /* util */,
+				A2DB258B23EBD84A00553701 /* model */,
 				A2EAB8FD23C8297F001899A5 /* theme */,
-				A2C15C4A23B718A40096D80D /* util */,
+				A2C15C4A23B718A40096D80D /* view */,
 				A20E7B9F23A8B9950009F2C9 /* CommonUtil.swift */,
 				A2EAB93E23C82B5C001899A5 /* MyThemes.swift */,
-				A247436123E959E5006109D3 /* UIViewController+Ext.swift */,
-				A20E7BA123A8BD8D0009F2C9 /* User.swift */,
-				A248173923A9F5FA00CF3B9C /* Book.swift */,
-				A28484D223C0E0BB00B7C3E1 /* Video.swift */,
-				A20A1D4523C466620013A7CF /* Address.swift */,
-				A2EAB94623C8799F001899A5 /* BaseCell.swift */,
 				A2A4632023CA104F00911C36 /* UserDefaultsExt.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
 		};
-		A248173023A9E89900CF3B9C /* setting */ = {
+		A248173023A9E89900CF3B9C /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
+				A2DB258723EBD7DB00553701 /* view */,
+				A2DB258623EBD7BB00553701 /* 主题切换 */,
+				A2DB258523EBD7AB00553701 /* 检查更新 */,
 				A248173123A9E8B900CF3B9C /* SettingController.swift */,
-				A248173323A9E98400CF3B9C /* CheckUpdateController.swift */,
-				A2EAB94023C85F6C001899A5 /* CheckUpdateCell.swift */,
-				A2EAB94223C8608C001899A5 /* ThemeSwithCell.swift */,
-				A2EAB94423C860B7001899A5 /* LogoutCell.swift */,
-				A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */,
 			);
-			path = setting;
+			path = "设置";
 			sourceTree = "<group>";
 		};
-		A25FE6FE23CDE1B90014E1C2 /* news */ = {
+		A25FE6FE23CDE1B90014E1C2 /* 活动推送 */ = {
 			isa = PBXGroup;
 			children = (
 				A248174123AA82CD00CF3B9C /* HomeNewsCell.swift */,
 				A29DD60D23E5C24C00BA23BE /* HomeNewsCell2.swift */,
 			);
-			path = news;
+			path = "活动推送";
 			sourceTree = "<group>";
 		};
-		A2766C3F23C350480037E1BF /* address */ = {
+		A2766C3F23C350480037E1BF /* 地址 */ = {
 			isa = PBXGroup;
 			children = (
+				A2DB258823EBD7F600553701 /* view */,
 				A2766C4023C353780037E1BF /* AddressController.swift */,
-				A2766C4223C367900037E1BF /* AddressCell.swift */,
 			);
-			path = address;
+			path = "地址";
 			sourceTree = "<group>";
 		};
-		A27B610223ABC65900B73AAF /* bookDetail */ = {
+		A27B610223ABC65900B73AAF /* 书籍详情 */ = {
 			isa = PBXGroup;
 			children = (
 				A27B610523ABC68A00B73AAF /* BookDetailController.swift */,
@@ -360,43 +354,39 @@
 				A25E9EA723AD155900EEE779 /* BookInfoCell.swift */,
 				A2215D2823E7DB5C00DC59D1 /* BookCommentCell.swift */,
 			);
-			path = bookDetail;
+			path = "书籍详情";
 			sourceTree = "<group>";
 		};
-		A28484CB23C0C45900B7C3E1 /* circle */ = {
+		A28484CB23C0C45900B7C3E1 /* 圈子 */ = {
 			isa = PBXGroup;
 			children = (
 				A28484CC23C0C47D00B7C3E1 /* CircleController.swift */,
 				A28484CE23C0C4C600B7C3E1 /* CircleCell.swift */,
 				A2A4631E23C9F37F00911C36 /* PlaybillCell.swift */,
 			);
-			path = circle;
+			path = "圈子";
 			sourceTree = "<group>";
 		};
-		A29DAC9823E6D2AC0018BA98 /* categroy */ = {
+		A29DAC9823E6D2AC0018BA98 /* categroy(分类) */ = {
 			isa = PBXGroup;
 			children = (
 				A29DAC9623E6B4EA0018BA98 /* CategroyController.swift */,
 			);
-			path = categroy;
+			path = "categroy(分类)";
 			sourceTree = "<group>";
 		};
-		A2C15C4923B70E260096D80D /* functioncell */ = {
+		A2C15C4923B70E260096D80D /* 更多功能 */ = {
 			isa = PBXGroup;
 			children = (
-				A28484CB23C0C45900B7C3E1 /* circle */,
+				A2DB258423EBD73E00553701 /* view */,
+				A2DB258323EBD71A00553701 /* 搜索 */,
+				A28484CB23C0C45900B7C3E1 /* 圈子 */,
 				A27B610023AB75BE00B73AAF /* HomeFunctionCell.swift */,
-				A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */,
-				A2C15C4D23B7282D0096D80D /* FunctionCollectionCell.swift */,
-				A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */,
-				A2C15C5123B72D710096D80D /* CircleCollectionCell.swift */,
-				A2C15C5323B72EC30096D80D /* GoodCollectionCell.swift */,
-				A2C15C5523B733F00096D80D /* SearchController.swift */,
 			);
-			path = functioncell;
+			path = "更多功能";
 			sourceTree = "<group>";
 		};
-		A2C15C4A23B718A40096D80D /* util */ = {
+		A2C15C4A23B718A40096D80D /* view */ = {
 			isa = PBXGroup;
 			children = (
 				A2688CB123CB50DC00D1C4E0 /* DropBox.swift */,
@@ -405,17 +395,139 @@
 				A27B60FE23AB125600B73AAF /* CycleScrollView.swift */,
 				A25E9E9D23AC879500EEE779 /* MultilineLabel.swift */,
 				A2EF593A23B633ED007D677C /* CBToast.swift */,
-				A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */,
 				A28484D423C0E4FB00B7C3E1 /* WaterFallLayout.swift */,
 				A20A1D4723C4A1840013A7CF /* LinearTextField.swift */,
-				A20A1D4923C4A4580013A7CF /* StringUtil.swift */,
-				A233609723C5FAA100D68D46 /* ColorUtil.swift */,
 				A233609923C603EB00D68D46 /* EWTextField.swift */,
 				A25FE6FF23CDE22B0014E1C2 /* WebController.swift */,
 				A275872323E2C64400BBEC21 /* VerticalCycleView.swift */,
 				A29DAC9423E683350018BA98 /* MPageControl.swift */,
+				A2EAB94623C8799F001899A5 /* BaseCell.swift */,
+				A247436123E959E5006109D3 /* UIViewController+Ext.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2DB258323EBD71A00553701 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				A2C15C5523B733F00096D80D /* SearchController.swift */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
+		A2DB258423EBD73E00553701 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A2C15C4D23B7282D0096D80D /* FunctionCollectionCell.swift */,
+				A2C15C4B23B71BD80096D80D /* SearchCollectionCell.swift */,
+				A2C15C4F23B72C380096D80D /* ActivityCollectionCell.swift */,
+				A2C15C5123B72D710096D80D /* CircleCollectionCell.swift */,
+				A2C15C5323B72EC30096D80D /* GoodCollectionCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2DB258523EBD7AB00553701 /* 检查更新 */ = {
+			isa = PBXGroup;
+			children = (
+				A248173323A9E98400CF3B9C /* CheckUpdateController.swift */,
+			);
+			path = "检查更新";
+			sourceTree = "<group>";
+		};
+		A2DB258623EBD7BB00553701 /* 主题切换 */ = {
+			isa = PBXGroup;
+			children = (
+				A246AD1723CDAA5F009321FF /* ThemeSwitchController.swift */,
+			);
+			path = "主题切换";
+			sourceTree = "<group>";
+		};
+		A2DB258723EBD7DB00553701 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A2EAB94023C85F6C001899A5 /* CheckUpdateCell.swift */,
+				A2EAB94223C8608C001899A5 /* ThemeSwithCell.swift */,
+				A2EAB94423C860B7001899A5 /* LogoutCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2DB258823EBD7F600553701 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A2766C4223C367900037E1BF /* AddressCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2DB258923EBD80300553701 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A25E9EA123ACAE3600EEE779 /* ShoppingCarCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2DB258A23EBD80D00553701 /* 订单结算 */ = {
+			isa = PBXGroup;
+			children = (
+				A25E9EA323ACE14800EEE779 /* OrderController.swift */,
+			);
+			path = "订单结算";
+			sourceTree = "<group>";
+		};
+		A2DB258B23EBD84A00553701 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A248173923A9F5FA00CF3B9C /* Book.swift */,
+				A20E7BA123A8BD8D0009F2C9 /* User.swift */,
+				A28484D223C0E0BB00B7C3E1 /* Video.swift */,
+				A20A1D4523C466620013A7CF /* Address.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A2DB258C23EBD86F00553701 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				A28484C923C0BA3900B7C3E1 /* ImageUtil.swift */,
+				A20A1D4923C4A4580013A7CF /* StringUtil.swift */,
+				A233609723C5FAA100D68D46 /* ColorUtil.swift */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		A2DB258D23EBD90800553701 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A248174323AA831D00CF3B9C /* HomeBookCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2DB258E23EBD91A00553701 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				A248173B23AA1BE200CF3B9C /* LoginController.swift */,
+			);
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		A2DB258F23EBD92600553701 /* 注册 */ = {
+			isa = PBXGroup;
+			children = (
+				A248173D23AA691B00CF3B9C /* RegisterController.swift */,
+			);
+			path = "注册";
+			sourceTree = "<group>";
+		};
+		A2DB259023EBD92E00553701 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A2EAB94823C87EF6001899A5 /* UserHeadCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		A2EAB8FD23C8297F001899A5 /* theme */ = {
@@ -474,12 +586,12 @@
 			path = plist;
 			sourceTree = "<group>";
 		};
-		A2EF593323B631E9007D677C /* userinfo */ = {
+		A2EF593323B631E9007D677C /* 详细信息 */ = {
 			isa = PBXGroup;
 			children = (
 				A2EF593123B630B4007D677C /* UserInfoController.swift */,
 			);
-			path = userinfo;
+			path = "详细信息";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
